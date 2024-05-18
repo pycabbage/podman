@@ -173,14 +173,14 @@ func (cli *Client) doRequest(req *http.Request) (serverResponse, error) {
 		// Although there's not a strongly typed error for this in go-winio,
 		// lots of people are using the default configuration for the docker
 		// daemon on Windows where the daemon is listening on a named pipe
-		// `//./pipe/docker_engine, and the client must be running elevated.
+		// `//./pipe/podman_docker_engine, and the client must be running elevated.
 		// Give users a clue rather than the not-overly useful message
-		// such as `error during connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.26/info:
-		// open //./pipe/docker_engine: The system cannot find the file specified.`.
+		// such as `error during connect: Get http://%2F%2F.%2Fpipe%2Fpodman_docker_engine/v1.26/info:
+		// open //./pipe/podman_docker_engine: The system cannot find the file specified.`.
 		// Note we can't string compare "The system cannot find the file specified" as
 		// this is localised - for example in French the error would be
-		// `open //./pipe/docker_engine: Le fichier spécifié est introuvable.`
-		if strings.Contains(err.Error(), `open //./pipe/docker_engine`) {
+		// `open //./pipe/podman_docker_engine: Le fichier spécifié est introuvable.`
+		if strings.Contains(err.Error(), `open //./pipe/podman_docker_engine`) {
 			// Checks if client is running with elevated privileges
 			if f, elevatedErr := os.Open("\\\\.\\PHYSICALDRIVE0"); elevatedErr == nil {
 				err = errors.Wrap(err, "in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect")

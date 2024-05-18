@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	defaultHost             = "npipe:////./pipe/docker_engine"
+	defaultHost             = "npipe:////./pipe/podman_docker_engine"
 	namedPipeConnectTimeout = 2 * time.Second
 )
 

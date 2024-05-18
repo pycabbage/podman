@@ -106,7 +106,7 @@ issues with non-podman clients, you can switch using the following command:
 
         podman machine set --rootful
 
-API forwarding listening on: npipe:////./pipe/docker_engine
+API forwarding listening on: npipe:////./pipe/podman_docker_engine
 
 Docker API clients default to this address. You do not need to set DOCKER_HOST.
 Machine "podman-machine-default" started successfully

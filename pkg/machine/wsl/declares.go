@@ -206,7 +206,7 @@ const (
 	gvProxy      = "gvproxy.exe"
 	winSSHProxy  = "win-sshproxy.exe"
 	pipePrefix   = "npipe:////./pipe/"
-	globalPipe   = "docker_engine"
+	globalPipe   = "podman_docker_engine"
 	userModeDist = "podman-net-usermode"
 	rootfulSock  = "/run/podman/podman.sock"
 	rootlessSock = "/run/user/1000/podman/podman.sock"

@@ -23,7 +23,7 @@ import (
 
 const (
 	NamedPipePrefix = "npipe:////./pipe/"
-	GlobalNamedPipe = "docker_engine"
+	GlobalNamedPipe = "podman_docker_engine"
 	winSSHProxy     = "win-sshproxy.exe"
 	winSSHProxyTid  = "win-sshproxy.tid"
 	rootfulSock     = "/run/podman/podman.sock"
