@@ -19,13 +19,13 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/bindings"
-	"github.com/containers/podman/v5/pkg/bindings/play"
-	v1 "github.com/containers/podman/v5/pkg/k8s.io/api/core/v1"
-	"github.com/containers/podman/v5/pkg/util"
-	. "github.com/containers/podman/v5/test/utils"
-	"github.com/containers/podman/v5/utils"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/bindings"
+	"github.com/pycabbage/podman/v5/pkg/bindings/play"
+	v1 "github.com/pycabbage/podman/v5/pkg/k8s.io/api/core/v1"
+	"github.com/pycabbage/podman/v5/pkg/util"
+	. "github.com/pycabbage/podman/v5/test/utils"
+	"github.com/pycabbage/podman/v5/utils"
 	"github.com/containers/storage/pkg/stringid"
 	"github.com/google/uuid"
 	. "github.com/onsi/ginkgo/v2"
@@ -5959,7 +5959,7 @@ spec:
 
 		Expect(inspectCtr2.OutputToString()).To(Equal(inspectCtr1.OutputToString()))
 
-		// see https://github.com/containers/podman/pull/19637, we should not see any warning/errors here
+		// see https://github.com/pycabbage/podman/pull/19637, we should not see any warning/errors here
 		podrm := podmanTest.Podman([]string{"kube", "down", outputFile})
 		podrm.WaitWithDefaultTimeout()
 		Expect(podrm).Should(ExitCleanly())

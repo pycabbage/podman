@@ -10,8 +10,8 @@ import (
 	"syscall"
 
 	"github.com/containernetworking/plugins/pkg/ns"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	. "github.com/containers/podman/v5/test/utils"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	"github.com/containers/storage/pkg/stringid"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -516,7 +516,7 @@ EXPOSE 2004-2005/tcp`, ALPINE)
 		session := podmanTest.Podman([]string{"run", "--network", "slirp4netns:enable_ipv6=true", ALPINE, "ip", "addr"})
 		session.WaitWithDefaultTimeout()
 		Expect(session).Should(ExitCleanly())
-		// check the ipv6 setup id done without delay (https://github.com/containers/podman/issues/11062)
+		// check the ipv6 setup id done without delay (https://github.com/pycabbage/podman/issues/11062)
 		Expect(session.OutputToString()).To(ContainSubstring("inet6 fd00::"))
 
 		const ipv6ConfDefaultAcceptDadSysctl = "/proc/sys/net/ipv6/conf/all/accept_dad"
@@ -1164,7 +1164,7 @@ EXPOSE 2004-2005/tcp`, ALPINE)
 		Expect(inspectOut[0].NetworkSettings.Networks).To(HaveKey("podman"))
 	})
 
-	// see https://github.com/containers/podman/issues/12972
+	// see https://github.com/pycabbage/podman/issues/12972
 	It("podman run check network-alias works on networks without dns", func() {
 		net := "dns" + stringid.GenerateRandomID()
 		session := podmanTest.Podman([]string{"network", "create", "--disable-dns", net})

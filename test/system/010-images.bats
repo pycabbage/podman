@@ -124,7 +124,7 @@ Labels.created_at | 20[0-9-]\\\+T[0-9:]\\\+Z
     run_podman rm  mytinycontainer
 }
 
-# Regression test for https://github.com/containers/podman/issues/7651
+# Regression test for https://github.com/pycabbage/podman/issues/7651
 # in which "podman pull image-with-sha" causes "images -a" to crash
 @test "podman images -a, after pulling by sha " {
     # This test requires that $IMAGE be 100% the same as the registry one
@@ -137,7 +137,7 @@ Labels.created_at | 20[0-9-]\\\+T[0-9:]\\\+Z
 
     # Get the digest of our local test image. We need to do this in two steps
     # because 'podman inspect' only works reliably on *IMAGE ID*, not name.
-    # See https://github.com/containers/podman/issues/3761
+    # See https://github.com/pycabbage/podman/issues/3761
     run_podman inspect --format '{{.Id}}' $IMAGE
     local iid="$output"
     run_podman inspect --format '{{.Digest}}' $iid

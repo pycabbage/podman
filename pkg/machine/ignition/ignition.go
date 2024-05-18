@@ -11,8 +11,8 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/systemd/parser"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/systemd/parser"
 	"github.com/sirupsen/logrus"
 )
 
@@ -221,7 +221,7 @@ func (ign *DynamicIgnition) GenerateIgnitionConfig() error {
 				// TODO Need to understand if this could play a role in machine
 				// updates given a certain configuration
 				// Disable auto-updating of fcos images
-				// https://github.com/containers/podman/issues/20122
+				// https://github.com/pycabbage/podman/issues/20122
 				Enabled: BoolToPtr(false),
 				Name:    "zincati.service",
 			},
@@ -365,7 +365,7 @@ pids_limit=0
 	files = append(files, File{
 		Node: Node{
 			Group: GetNodeGrp("root"),
-			Path:  "/etc/containers/podman-machine",
+			Path:  "/etc/pycabbage/podman-machine",
 			User:  GetNodeUsr("root"),
 		},
 		FileEmbedded1: FileEmbedded1{
@@ -580,7 +580,7 @@ func EncodeDataURLPtr(contents string) *string {
 }
 
 func GetPodmanDockerTmpConfig(uid int, rootful bool, newline bool) string {
-	// Derived from https://github.com/containers/podman/blob/main/contrib/systemd/system/podman-docker.conf
+	// Derived from https://github.com/pycabbage/podman/blob/main/contrib/systemd/system/podman-docker.conf
 	podmanSock := "/run/podman/podman.sock"
 	if !rootful {
 		podmanSock = fmt.Sprintf("/run/user/%d/podman/podman.sock", uid)

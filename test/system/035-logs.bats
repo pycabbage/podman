@@ -390,7 +390,7 @@ $content--2.*" "logs --until -f on running container works"
     _log_test_follow_until journald
 }
 
-# https://github.com/containers/podman/issues/19545
+# https://github.com/pycabbage/podman/issues/19545
 @test "podman logs --tail, k8s-file with partial lines" {
     cname="tail_container"
 

@@ -146,7 +146,7 @@ func (r *Runtime) Pull(ctx context.Context, name string, pullPolicy config.PullP
 	// Some callers may set the platform via the system context at creation
 	// time of the runtime.  We need this information to decide whether we
 	// need to enforce pulling from a registry (see
-	// containers/podman/issues/10682).
+	// pycabbage/podman/issues/10682).
 	if options.Architecture == "" {
 		options.Architecture = r.systemContext.ArchitectureChoice
 	}
@@ -221,7 +221,7 @@ func nameFromAnnotations(annotations map[string]string) string {
 		return ""
 	}
 	// buildkit/containerd are using a custom annotation see
-	// containers/podman/issues/12560.
+	// pycabbage/podman/issues/12560.
 	if annotations["io.containerd.image.name"] != "" {
 		return annotations["io.containerd.image.name"]
 	}
@@ -241,7 +241,7 @@ func (r *Runtime) copyFromDefault(ctx context.Context, ref types.ImageReference,
 	var storageName, imageName string
 	switch ref.Transport().Name() {
 	case dockerDaemonTransport.Transport.Name():
-		// Normalize to docker.io if needed (see containers/podman/issues/10998).
+		// Normalize to docker.io if needed (see pycabbage/podman/issues/10998).
 		named, err := reference.ParseNormalizedNamed(ref.StringWithinTransport())
 		if err != nil {
 			return nil, err
@@ -477,7 +477,7 @@ func (r *Runtime) imagesIDsForManifest(manifestBytes []byte, sys *types.SystemCo
 
 	// If you have additionStores defined and the same image stored in
 	// both storage and additional store, it can be output twice.
-	// Fixes github.com/containers/podman/issues/18647
+	// Fixes github.com/pycabbage/podman/issues/18647
 	results := []string{}
 	imageMap := map[string]bool{}
 	for _, image := range images {
@@ -516,7 +516,7 @@ func (r *Runtime) copySingleImageFromRegistry(ctx context.Context, imageName str
 	// NOTE that we only do platform checks if the specified values differ
 	// from the local platform. Unfortunately, there are many images used
 	// in the wild which don't set the correct value(s) in the config
-	// causing various issues such as containers/podman/issues/10682.
+	// causing various issues such as pycabbage/podman/issues/10682.
 	lookupImageOptions := &LookupImageOptions{Variant: options.Variant}
 	if options.Architecture != runtime.GOARCH {
 		lookupImageOptions.Architecture = options.Architecture
@@ -541,7 +541,7 @@ func (r *Runtime) copySingleImageFromRegistry(ctx context.Context, imageName str
 	if customPlatform && pullPolicy != config.PullPolicyAlways && pullPolicy != config.PullPolicyNever {
 		// Unless the pull policy is always/never, we must
 		// pessimistically assume that the local image has an invalid
-		// architecture (see containers/podman/issues/10682).  Hence,
+		// architecture (see pycabbage/podman/issues/10682).  Hence,
 		// whenever the user requests a custom platform, set the pull
 		// policy to "newer" to make sure we're pulling down the
 		// correct image.
@@ -579,7 +579,7 @@ func (r *Runtime) copySingleImageFromRegistry(ctx context.Context, imageName str
 	// platform is specified (e.g., `--arch=arm64`).  In that case, we need
 	// to pessimistically pull the image since some images declare wrong
 	// platforms making platform checks absolutely unreliable (see
-	// containers/podman/issues/10682).
+	// pycabbage/podman/issues/10682).
 	//
 	// In other words: multi-arch support can only be as good as the images
 	// in the wild, so we shouldn't break things for our users by trying to

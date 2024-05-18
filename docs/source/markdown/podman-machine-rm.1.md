@@ -47,9 +47,9 @@ $ podman machine rm test1
 
 The following files will be deleted:
 
-/home/user/.config/containers/podman/machine/qemu/test1.ign
-/home/user/.local/share/containers/podman/machine/qemu/test1_fedora-coreos-33.20210315.1.0-qemu.x86_64.qcow2
-/home/user/.config/containers/podman/machine/qemu/test1.json
+/home/user/.config/pycabbage/podman/machine/qemu/test1.ign
+/home/user/.local/share/pycabbage/podman/machine/qemu/test1_fedora-coreos-33.20210315.1.0-qemu.x86_64.qcow2
+/home/user/.config/pycabbage/podman/machine/qemu/test1.json
 
 Are you sure you want to continue? [y/N] y
 ```

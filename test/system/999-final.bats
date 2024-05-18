@@ -10,7 +10,7 @@ load helpers
 # This should never fail! If it does, it means that some test somewhere
 # has run podman with --db-backend, which is known to wreak havoc.
 #
-# See  https://github.com/containers/podman/issues/20563
+# See  https://github.com/pycabbage/podman/issues/20563
 @test "podman database backend has not changed" {
     # File is always written in 005-info.bats. It must always exist
     # by the time we get here...

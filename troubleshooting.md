@@ -657,7 +657,7 @@ file to `/etc/modules.load.d`.  See `man modules-load.d` for more details.
 ### 25) podman run --rootfs link/to//read/only/dir does not work
 
 An error such as "OCI runtime error" on a read-only filesystem or the error "{image} is not an absolute path or is a symlink" are often times indicators for this issue.  For more details, review this [issue](
-https://github.com/containers/podman/issues/5895).
+https://github.com/pycabbage/podman/issues/5895).
 
 #### Symptom
 
@@ -795,8 +795,8 @@ returns an error that an image must be built.
 In order to use a CNI network in a rootless container on RHEL,
 an Infra container image for CNI-in-slirp4netns must be created.  The
 instructions for building the Infra container image can be found for
-v2.2.1 [here](https://github.com/containers/podman/tree/v2.2.1-rhel/contrib/rootless-cni-infra),
-and for v3.0.1 [here](https://github.com/containers/podman/tree/v3.0.1-rhel/contrib/rootless-cni-infra).
+v2.2.1 [here](https://github.com/pycabbage/podman/tree/v2.2.1-rhel/contrib/rootless-cni-infra),
+and for v3.0.1 [here](https://github.com/pycabbage/podman/tree/v3.0.1-rhel/contrib/rootless-cni-infra).
 
 ### 30) Container related firewall rules are lost after reloading firewalld
 Container network can't be reached after `firewall-cmd --reload` and `systemctl restart firewalld` Running `podman network reload` will fix it but it has to be done manually.
@@ -805,7 +805,7 @@ Container network can't be reached after `firewall-cmd --reload` and `systemctl 
 The firewall rules created by podman are lost when the firewall is reloaded.
 
 #### Solution
-[@ranjithrajaram](https://github.com/containers/podman/issues/5431#issuecomment-847758377) has created a systemd-hook to fix this issue
+[@ranjithrajaram](https://github.com/pycabbage/podman/issues/5431#issuecomment-847758377) has created a systemd-hook to fix this issue
 
 1) For "firewall-cmd --reload", create a systemd unit file with the following
 ```ini
@@ -840,7 +840,7 @@ WantedBy=default.target
 ```
 
 However, If you use busctl monitor then you can't get machine-readable output on RHEL 8.
-Since it doesn't have `busctl -j` as mentioned here by [@yrro](https://github.com/containers/podman/issues/5431#issuecomment-896943018).
+Since it doesn't have `busctl -j` as mentioned here by [@yrro](https://github.com/pycabbage/podman/issues/5431#issuecomment-896943018).
 
 For RHEL 8, you can use the following one-liner bash script.
 ```ini

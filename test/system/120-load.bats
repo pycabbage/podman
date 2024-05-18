@@ -13,7 +13,7 @@ function teardown() {
     # reloading the default $IMAGE in a way that appears normal but
     # is not actually the same as what is normally pulled, e.g.,
     # annotations and image digests may be different. See
-    # https://github.com/containers/podman/discussions/17911
+    # https://github.com/pycabbage/podman/discussions/17911
     run_podman rmi -a -f
 
     basic_teardown
@@ -83,12 +83,12 @@ verify_iid_and_name() {
 @test "podman image scp transfer" {
     skip_if_remote "only applicable under local podman"
 
-    # See https://github.com/containers/podman/pull/21300 for details
+    # See https://github.com/pycabbage/podman/pull/21300 for details
     if [[ "$CI_DESIRED_DATABASE" = "boltdb" ]]; then
         skip "impossible due to pitfalls in our SSH implementation"
     fi
 
-    # See https://github.com/containers/podman/pull/21431
+    # See https://github.com/pycabbage/podman/pull/21431
     if [[ -n "$PODMAN_IGNORE_CGROUPSV1_WARNING" ]]; then
         skip "impossible to test due to pitfalls in our SSH implementation"
     fi

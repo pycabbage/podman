@@ -10,7 +10,7 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-// setupPipe for fixing https://github.com/containers/podman/issues/7017
+// setupPipe for fixing https://github.com/pycabbage/podman/issues/7017
 // uses named pipe since containers/image EvalSymlinks fails with /dev/stdout
 // the caller should use the returned function to clean up the pipeDir
 func setupPipe() (string, func() <-chan error, error) {

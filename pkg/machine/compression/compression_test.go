@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/containers/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

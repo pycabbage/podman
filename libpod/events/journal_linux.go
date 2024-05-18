@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/containers/podman/v5/pkg/rootless"
-	"github.com/containers/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/pkg/rootless"
+	"github.com/pycabbage/podman/v5/pkg/util"
 	"github.com/coreos/go-systemd/v22/journal"
 	"github.com/coreos/go-systemd/v22/sdjournal"
 	"github.com/sirupsen/logrus"
@@ -82,7 +82,7 @@ func (e EventJournalD) Write(ee Event) error {
 	// journal if a small interval is used. That however broke the healthcheck event as it no
 	// longer showed up in podman events when running as root as we only send the event on info
 	// level. To fix this we have to send the event on notice level.
-	// https://github.com/containers/podman/issues/20342
+	// https://github.com/pycabbage/podman/issues/20342
 	prio := journal.PriInfo
 	if len(ee.HealthStatus) > 0 {
 		prio = journal.PriNotice

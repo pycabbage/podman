@@ -1,7 +1,7 @@
 package integration
 
 import (
-	. "github.com/containers/podman/v5/test/utils"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	"github.com/containers/storage/pkg/stringid"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -92,7 +92,7 @@ var _ = Describe("Podman network connect and disconnect", func() {
 		Expect(exec3).Should(ExitCleanly())
 		Expect(exec3.OutputToString()).ToNot(ContainSubstring(ns))
 
-		// make sure stats still works https://github.com/containers/podman/issues/13824
+		// make sure stats still works https://github.com/pycabbage/podman/issues/13824
 		stats := podmanTest.Podman([]string{"stats", "test", "--no-stream"})
 		stats.WaitWithDefaultTimeout()
 		Expect(stats).Should(ExitCleanly())
@@ -228,12 +228,12 @@ var _ = Describe("Podman network connect and disconnect", func() {
 		Expect(exec3).Should(ExitCleanly())
 		Expect(exec3.OutputToString()).To(ContainSubstring(ns))
 
-		// make sure stats works https://github.com/containers/podman/issues/13824
+		// make sure stats works https://github.com/pycabbage/podman/issues/13824
 		stats := podmanTest.Podman([]string{"stats", "test", "--no-stream"})
 		stats.WaitWithDefaultTimeout()
 		Expect(stats).Should(ExitCleanly())
 
-		// make sure no logrus errors are shown https://github.com/containers/podman/issues/9602
+		// make sure no logrus errors are shown https://github.com/pycabbage/podman/issues/9602
 		rm := podmanTest.Podman([]string{"rm", "--time=0", "-f", "test"})
 		rm.WaitWithDefaultTimeout()
 		Expect(rm).Should(ExitCleanly())

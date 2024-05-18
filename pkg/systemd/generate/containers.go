@@ -12,11 +12,11 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/containers/podman/v5/libpod"
-	libpodDefine "github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	"github.com/containers/podman/v5/pkg/systemd/define"
-	"github.com/containers/podman/v5/version"
+	"github.com/pycabbage/podman/v5/libpod"
+	libpodDefine "github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/pkg/systemd/define"
+	"github.com/pycabbage/podman/v5/version"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/pflag"
 )
@@ -368,7 +368,7 @@ func executeContainerTemplate(info *containerInfo, options entities.GenerateSyst
 		fs.String("sdnotify", "", "")
 		fs.String("restart", "", "")
 		// have to define extra -h flag to prevent help error when parsing -h hostname
-		// https://github.com/containers/podman/issues/15124
+		// https://github.com/pycabbage/podman/issues/15124
 		fs.StringP("help", "h", "", "")
 		if err := fs.Parse(remainingCmd); err != nil {
 			return "", fmt.Errorf("parsing remaining command-line arguments: %w", err)
@@ -430,7 +430,7 @@ func executeContainerTemplate(info *containerInfo, options entities.GenerateSyst
 			// Enforce --replace for named containers.  This will
 			// make systemd units more robust as it allows them to
 			// start after system crashes (see
-			// github.com/containers/podman/issues/5485).
+			// github.com/pycabbage/podman/issues/5485).
 			startCommand = append(startCommand, "--replace")
 
 			if fs.Changed("replace") {

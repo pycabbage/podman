@@ -98,7 +98,7 @@ setup() {
 # Argh! podman >= 3.4 something something namespace something, fails with
 #   Error: invalid config provided: cannot set hostname when running in the host UTS namespace: invalid configuration
 #
-# https://github.com/containers/podman/issues/11969#issuecomment-943386484
+# https://github.com/pycabbage/podman/issues/11969#issuecomment-943386484
 #
 if grep -q utsns /etc/containers/containers.conf; then
     sed -i -e '/^\utsns=/d' /etc/containers/containers.conf

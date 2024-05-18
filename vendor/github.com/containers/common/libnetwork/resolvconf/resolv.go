@@ -88,7 +88,7 @@ func getDefaultResolvConf(params *Params) ([]byte, bool, error) {
 			// used by systemd-resolved
 			path = "/run/systemd/resolve/resolv.conf"
 		case localhost:
-			// used by NetworkManager https://github.com/containers/podman/issues/13599
+			// used by NetworkManager https://github.com/pycabbage/podman/issues/13599
 			path = "/run/NetworkManager/no-stub-resolv.conf"
 		}
 		if path != "" {

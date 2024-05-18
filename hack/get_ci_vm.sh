@@ -31,8 +31,8 @@ if [[ "$1" == "--config" ]]; then
     case "$GET_CI_VM" in
         1)
             cat <<EOF
-DESTDIR="/var/tmp/go/src/github.com/containers/podman"
-UPSTREAM_REPO="https://github.com/containers/podman.git"
+DESTDIR="/var/tmp/go/src/github.com/pycabbage/podman"
+UPSTREAM_REPO="https://github.com/pycabbage/podman.git"
 CI_ENVFILE="/etc/ci_environment"
 GCLOUD_PROJECT="libpod-218412"
 GCLOUD_IMGPROJECT="libpod-218412"

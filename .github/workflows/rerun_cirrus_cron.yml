@@ -45,7 +45,7 @@ jobs:
             - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
               with:
                   # All scripts used by this workflow live in podman repo.
-                  repository: "containers/podman"
+                  repository: "pycabbage/podman"
                   ref: "main"
                   persist-credentials: false
 

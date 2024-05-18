@@ -16,8 +16,8 @@ import (
 	"time"
 
 	winio "github.com/Microsoft/go-winio"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/env"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
 	"github.com/sirupsen/logrus"
 )
 

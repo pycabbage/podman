@@ -3,8 +3,8 @@ package pods
 import (
 	"context"
 
-	"github.com/containers/podman/v5/cmd/podman/common"
-	"github.com/containers/podman/v5/cmd/podman/registry"
+	"github.com/pycabbage/podman/v5/cmd/podman/common"
+	"github.com/pycabbage/podman/v5/cmd/podman/registry"
 	"github.com/spf13/cobra"
 )
 

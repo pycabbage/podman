@@ -21,9 +21,9 @@ import (
 	"time"
 
 	"github.com/containers/common/pkg/cgroups"
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/inspect"
-	. "github.com/containers/podman/v5/test/utils"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/inspect"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	"github.com/containers/storage/pkg/lockfile"
 	"github.com/containers/storage/pkg/reexec"
 	"github.com/containers/storage/pkg/stringid"
@@ -653,7 +653,7 @@ func (p *PodmanTestIntegration) Cleanup() {
 	}
 
 	// first stop everything, rm -fa is unreliable
-	// https://github.com/containers/podman/issues/18180
+	// https://github.com/pycabbage/podman/issues/18180
 	stop := p.Podman([]string{"stop", "--all", "-t", "0"})
 	stop.WaitWithDefaultTimeout()
 
@@ -1377,7 +1377,7 @@ func WaitForService(address url.URL) {
 // useCustomNetworkDir makes sure this test uses a custom network dir.
 // This needs to be called for all test they may remove networks from other tests,
 // so netwokr prune, system prune, or system reset.
-// see https://github.com/containers/podman/issues/17946
+// see https://github.com/pycabbage/podman/issues/17946
 func useCustomNetworkDir(podmanTest *PodmanTestIntegration, tempdir string) {
 	// set custom network directory to prevent flakes since the dir is shared with all tests by default
 	podmanTest.NetworkConfigDir = tempdir

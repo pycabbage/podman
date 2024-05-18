@@ -29,7 +29,7 @@
 //
 //	    curl --unix-socket /run/podman/podman.sock http://d/v5.0.0/libpod/info
 //
-//	 'podman pull quay.io/containers/podman'
+//	 'podman pull quay.io/pycabbage/podman'
 //
 //	    curl -XPOST --unix-socket /run/podman/podman.sock -v 'http://d/v5.0.0/images/create?fromImage=quay.io%2Fcontainers%2Fpodman'
 //
@@ -39,7 +39,7 @@
 //
 // Terms Of Service:
 //
-// https://github.com/containers/podman/blob/913caaa9b1de2b63692c9bae15120208194c9eb3/LICENSE
+// https://github.com/pycabbage/podman/blob/913caaa9b1de2b63692c9bae15120208194c9eb3/LICENSE
 //
 //	Schemes: http, https
 //	Host: podman.io

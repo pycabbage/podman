@@ -184,7 +184,7 @@ function pasta_test_do() {
     # and port forwarding configuration for Podman and pasta.
     #
     # TODO: Use Podman options once/if
-    # https://github.com/containers/podman/issues/14425 is solved
+    # https://github.com/pycabbage/podman/issues/14425 is solved
     case ${bind_type} in
     "interface")
         local pasta_spec=":--${proto}-ports,${addr}%${ifname}/${port}:${xport}"

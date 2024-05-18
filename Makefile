@@ -29,7 +29,7 @@ COVERAGE_PATH ?= .coverage
 DESTDIR ?=
 EPOCH_TEST_COMMIT ?= $(shell git merge-base $${DEST_BRANCH:-main} HEAD)
 HEAD ?= HEAD
-PROJECT := github.com/containers/podman
+PROJECT := github.com/pycabbage/podman
 GIT_BASE_BRANCH ?= origin/main
 LIBPOD_INSTANCE := libpod_dev
 PREFIX ?= /usr/local
@@ -159,7 +159,7 @@ GOMD2MAN ?= ./test/tools/build/go-md2man
 # by OpenWRT for routers and other similar small "edge" devices.  Testing builds
 # for otherwise non-mainstream architectures ensures we catch platform-specific
 # toolchain shenanigans early, for example:
-# https://github.com/containers/podman/issues/8782
+# https://github.com/pycabbage/podman/issues/8782
 CROSS_BUILD_TARGETS := \
 	bin/podman.cross.linux.amd64 \
 	bin/podman.cross.linux.ppc64le \

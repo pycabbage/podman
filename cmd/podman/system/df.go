@@ -10,10 +10,10 @@ import (
 
 	"github.com/containers/common/pkg/completion"
 	"github.com/containers/common/pkg/report"
-	"github.com/containers/podman/v5/cmd/podman/common"
-	"github.com/containers/podman/v5/cmd/podman/registry"
-	"github.com/containers/podman/v5/cmd/podman/validate"
-	"github.com/containers/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/cmd/podman/common"
+	"github.com/pycabbage/podman/v5/cmd/podman/registry"
+	"github.com/pycabbage/podman/v5/cmd/podman/validate"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
 	"github.com/docker/go-units"
 	"github.com/spf13/cobra"
 )
@@ -325,7 +325,7 @@ func (d dfSummary) MarshalJSON() ([]byte, error) {
 
 	return json.Marshal(struct {
 		rawDf
-		// fields for docker compat https://github.com/containers/podman/issues/16902
+		// fields for docker compat https://github.com/pycabbage/podman/issues/16902
 		TotalCount  int
 		Size        string
 		Reclaimable string

@@ -27,7 +27,7 @@ load helpers
     for field in ${!expect[@]}; do
         # ARGH! The /sys/fs kludgery is for RHEL8 rootless, which mumble mumble
         # does some sort of magic muckery with /sys - I think the relevant
-        # PR is https://github.com/containers/podman/pull/8561
+        # PR is https://github.com/pycabbage/podman/pull/8561
         # Anyhow, without the egrep below, this test fails about 50% of the
         # time on rootless RHEL8. (No, I don't know why it's not 100%).
         result=$(jq -r -c ".${field}[]" <<<"$output" | grep -E -v '^/sys/fs')

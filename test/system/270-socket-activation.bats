@@ -11,7 +11,7 @@ function setup_file() {
     # We have to stop the background registry here. These tests kill the podman pause
     # process which means commands after that are in a new one and when the cleanup
     # later tries to stop the registry container it will be in the wrong ns and can fail.
-    # https://github.com/containers/podman/pull/21563#issuecomment-1960047648
+    # https://github.com/pycabbage/podman/pull/21563#issuecomment-1960047648
     stop_registry
 }
 

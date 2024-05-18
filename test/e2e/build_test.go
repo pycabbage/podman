@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/containers/buildah/define"
-	. "github.com/containers/podman/v5/test/utils"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	. "github.com/onsi/gomega/gexec"
@@ -584,7 +584,7 @@ subdir**`
 		Expect(output).NotTo(ContainSubstring("/testfilter/subdir"))
 	})
 
-	// See https://github.com/containers/podman/issues/13535
+	// See https://github.com/pycabbage/podman/issues/13535
 	It("Remote build .containerignore filtering embedded directory (#13535)", func() {
 		SkipIfNotRemote("Testing remote .containerignore file filtering")
 		podmanTest.RestartRemoteService()
@@ -883,7 +883,7 @@ RUN ls /dev/test1`, CITEST_IMAGE)
 		Expect(build).To(ExitCleanly())
 	})
 
-	// system reset must run serial: https://github.com/containers/podman/issues/17903
+	// system reset must run serial: https://github.com/pycabbage/podman/issues/17903
 	It("podman system reset must clean host shared cache", Serial, func() {
 		SkipIfRemote("podman-remote does not have system reset -f")
 		useCustomNetworkDir(podmanTest, tempdir)

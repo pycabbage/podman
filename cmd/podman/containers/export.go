@@ -7,10 +7,10 @@ import (
 	"strings"
 
 	"github.com/containers/common/pkg/completion"
-	"github.com/containers/podman/v5/cmd/podman/common"
-	"github.com/containers/podman/v5/cmd/podman/parse"
-	"github.com/containers/podman/v5/cmd/podman/registry"
-	"github.com/containers/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/cmd/podman/common"
+	"github.com/pycabbage/podman/v5/cmd/podman/parse"
+	"github.com/pycabbage/podman/v5/cmd/podman/registry"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
 	"github.com/spf13/cobra"
 	"golang.org/x/term"
 )
@@ -80,7 +80,7 @@ func export(cmd *cobra.Command, args []string) error {
 			return err
 		}
 		// open file here with O_WRONLY since on MacOS it can fail to open /dev/stderr in read mode for example
-		// https://github.com/containers/podman/issues/16870
+		// https://github.com/pycabbage/podman/issues/16870
 		file, err := os.OpenFile(outputFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 		if err != nil {
 			return err

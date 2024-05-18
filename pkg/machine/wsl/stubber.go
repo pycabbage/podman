@@ -10,17 +10,17 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/containers/podman/v5/pkg/machine/env"
-	"github.com/containers/podman/v5/pkg/machine/ocipull"
-	"github.com/containers/podman/v5/pkg/machine/shim/diskpull"
-	"github.com/containers/podman/v5/pkg/machine/stdpull"
-	"github.com/containers/podman/v5/pkg/machine/wsl/wutil"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
+	"github.com/pycabbage/podman/v5/pkg/machine/ocipull"
+	"github.com/pycabbage/podman/v5/pkg/machine/shim/diskpull"
+	"github.com/pycabbage/podman/v5/pkg/machine/stdpull"
+	"github.com/pycabbage/podman/v5/pkg/machine/wsl/wutil"
 
 	gvproxy "github.com/containers/gvisor-tap-vsock/pkg/types"
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/ignition"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/ignition"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 	"github.com/sirupsen/logrus"
 )
 

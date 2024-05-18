@@ -5,7 +5,7 @@ package main
 import (
 	"log/syslog"
 
-	"github.com/containers/podman/v5/cmd/podman/registry"
+	"github.com/pycabbage/podman/v5/cmd/podman/registry"
 	"github.com/sirupsen/logrus"
 	logrusSyslog "github.com/sirupsen/logrus/hooks/syslog"
 )

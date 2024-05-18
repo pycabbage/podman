@@ -1,4 +1,4 @@
-module github.com/containers/podman/v5
+module github.com/pycabbage/podman/v5
 
 go 1.20
 

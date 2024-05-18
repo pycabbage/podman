@@ -1,6 +1,6 @@
 package types
 
-import "github.com/containers/podman/v5/pkg/domain/entities"
+import "github.com/pycabbage/podman/v5/pkg/domain/entities"
 
 // LibpodImagesRemoveReport is the return type for image removal via the rest
 // api.

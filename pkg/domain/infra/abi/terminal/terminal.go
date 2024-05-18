@@ -7,7 +7,7 @@ import (
 	"os/signal"
 
 	"github.com/containers/common/pkg/resize"
-	lsignal "github.com/containers/podman/v5/pkg/signal"
+	lsignal "github.com/pycabbage/podman/v5/pkg/signal"
 	"github.com/moby/term"
 	"github.com/sirupsen/logrus"
 )

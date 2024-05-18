@@ -383,7 +383,7 @@ func (r *Runtime) lookupImageInLocalStorage(name, candidate string, namedCandida
 	if err != nil {
 		if errors.Is(err, os.ErrNotExist) {
 			// We must be tolerant toward corrupted images.
-			// See containers/podman commit fd9dd7065d44.
+			// See pycabbage/podman commit fd9dd7065d44.
 			logrus.Warnf("Failed to determine if an image is a manifest list: %v, ignoring the error", err)
 			return image, nil
 		}
@@ -606,7 +606,7 @@ func (r *Runtime) ListImages(ctx context.Context, names []string, options *ListI
 	// dangling and parent information of all filtered images.  That will
 	// considerably speed things up for callers who need this information
 	// as the layer tree will computed once for all instead of once for
-	// each individual image (see containers/podman/issues/17828).
+	// each individual image (see pycabbage/podman/issues/17828).
 
 	tree, err := r.layerTree(ctx, images)
 	if err != nil {

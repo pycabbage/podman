@@ -27,7 +27,7 @@ our $VERSION = '0.3';
 
 # Page describing this process in much more detail
 our $Docs_URL =
-    'https://github.com/containers/podman/wiki/Buildah-Vendor-Treadmill';
+    'https://github.com/pycabbage/podman/wiki/Buildah-Vendor-Treadmill';
 
 # github path to buildah
 our $Buildah = 'github.com/containers/buildah';
@@ -541,7 +541,7 @@ and re-run me.
 
 If you do not have a github API token, please go here:
 
-   https://github.com/containers/podman/pulls?q=is%3Apr+is%3Aopen+%22buildah+vendor+treadmill%22
+   https://github.com/pycabbage/podman/pulls?q=is%3Apr+is%3Aopen+%22buildah+vendor+treadmill%22
 
 ...then reinvoke me, adding that PR ID to the command line args.
 
@@ -553,7 +553,7 @@ END_NEED_PR
     my $query = <<'END_QUERY';
 {
   search(
-    query: "buildah vendor treadmill repo:containers/podman",
+    query: "buildah vendor treadmill repo:pycabbage/podman",
     type: ISSUE,
     first: 10
   ) {
@@ -872,7 +872,7 @@ sub git_upstream {
         }
     }
 
-    die "$ME: did not find a remote with 'github.com/containers/podman'\n";
+    die "$ME: did not find a remote with 'github.com/pycabbage/podman'\n";
 }
 
 ########################

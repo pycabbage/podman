@@ -1,7 +1,7 @@
 package vmconfigs
 
 import (
-	"github.com/containers/podman/v5/pkg/machine/hyperv/vsock"
+	"github.com/pycabbage/podman/v5/pkg/machine/hyperv/vsock"
 )
 
 type HyperVConfig struct {

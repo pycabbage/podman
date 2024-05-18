@@ -12,7 +12,7 @@ const (
 	UnknownPackage = "Unknown"
 )
 
-// Note: This function is copied from containers/podman libpod/util.go
+// Note: This function is copied from pycabbage/podman libpod/util.go
 // Please see https://github.com/containers/common/pull/1460
 func queryPackageVersion(cmdArg ...string) string {
 	output := UnknownPackage
@@ -46,7 +46,7 @@ func queryPackageVersion(cmdArg ...string) string {
 	return strings.Trim(output, "\n")
 }
 
-// Note: This function is copied from containers/podman libpod/util.go
+// Note: This function is copied from pycabbage/podman libpod/util.go
 // Please see https://github.com/containers/common/pull/1460
 func Package(program string) string { // program is full path
 	_, err := os.Stat(program)
@@ -73,7 +73,7 @@ func Package(program string) string { // program is full path
 	return UnknownPackage
 }
 
-// Note: This function is copied from containers/podman libpod/util.go
+// Note: This function is copied from pycabbage/podman libpod/util.go
 // Please see https://github.com/containers/common/pull/1460
 func Program(name string) (string, error) {
 	return program(name, false)

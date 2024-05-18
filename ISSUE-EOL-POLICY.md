@@ -10,11 +10,11 @@ stale issues.
 
 ## Definitions
 
-[**stale**](https://github.com/containers/podman/issues?q=is%3Aopen+is%3Aissue+sort%3Acreated-asc+label%3Astale-issue): open, but no activity in the last thirty days.
+[**stale**](https://github.com/pycabbage/podman/issues?q=is%3Aopen+is%3Aissue+sort%3Acreated-asc+label%3Astale-issue): open, but no activity in the last thirty days.
 
 **crickets**: closed due to lack of response from reporting party.
 
-[**jetsam**](https://github.com/containers/podman/issues?q=is%3Aissue+label%3Ajetsam+is%3Aclosed): closed without being implemented. A deliberate decision made in recognition of human limitations.
+[**jetsam**](https://github.com/pycabbage/podman/issues?q=is%3Aissue+label%3Ajetsam+is%3Aclosed): closed without being implemented. A deliberate decision made in recognition of human limitations.
 
 ------
 
@@ -24,7 +24,7 @@ In order of judgment, from least to most.
 
 #### &rarr; stale
 
-Issues are marked with the label *stale-issue* by a [github action](https://github.com/containers/podman/blob/main/.github/workflows/stale.yml) that runs daily at 00:00 UT. This also triggers an email alert to subscribers on that issue.
+Issues are marked with the label *stale-issue* by a [github action](https://github.com/pycabbage/podman/blob/main/.github/workflows/stale.yml) that runs daily at 00:00 UT. This also triggers an email alert to subscribers on that issue.
 
 Judgment: typically a team member will skim the issue, then decide whether to:
 

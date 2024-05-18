@@ -10,12 +10,12 @@ import (
 
 	"github.com/containers/common/pkg/config"
 	gvproxy "github.com/containers/gvisor-tap-vsock/pkg/types"
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/connection"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/env"
-	"github.com/containers/podman/v5/pkg/machine/ports"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/connection"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
+	"github.com/pycabbage/podman/v5/pkg/machine/ports"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 	"github.com/sirupsen/logrus"
 )
 

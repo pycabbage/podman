@@ -2050,7 +2050,7 @@ msgstr ""
 msgid ""
 "On some systems, changing the resource limits may not be allowed for non-"
 "root users. For more details, see "
-"https://github.com/containers/podman/blob/main/troubleshooting.md#26"
+"https://github.com/pycabbage/podman/blob/main/troubleshooting.md#26"
 "-running-containers-with-resource-limits-fails-with-a-permissions-error"
 msgstr ""
 
@@ -8558,7 +8558,7 @@ msgstr ""
 msgid ""
 "On some systems, changing the CPU limits may not be allowed for non-root "
 "users. For more details, see "
-"https://github.com/containers/podman/blob/main/troubleshooting.md#26"
+"https://github.com/pycabbage/podman/blob/main/troubleshooting.md#26"
 "-running-containers-with-resource-limits-fails-with-a-permissions-error"
 msgstr ""
 
@@ -18236,7 +18236,7 @@ msgstr ""
 #: ../../source/markdown/podman-machine-list.1.md:23
 msgid ""
 "NOTE: The podman-machine configuration file is managed under the "
-"`$XDG_CONFIG_HOME/containers/podman/machine/` directory. Changing the "
+"`$XDG_CONFIG_HOME/pycabbage/podman/machine/` directory. Changing the "
 "`$XDG_CONFIG_HOME` environment variable while the machines are running "
 "can lead to unexpected behavior. (see [podman(1)](podman.1.md))"
 msgstr ""
@@ -18744,7 +18744,7 @@ msgstr ""
 #: ../../source/markdown/podman-machine.1.md:20
 msgid ""
 "NOTE: The podman-machine configuration file is managed under the "
-"`$XDG_CONFIG_HOME/containers/podman/machine/` directory. Changing the "
+"`$XDG_CONFIG_HOME/pycabbage/podman/machine/` directory. Changing the "
 "`$XDG_CONFIG_HOME` environment variable while the machines are running "
 "can lead to unexpected behavior."
 msgstr ""
@@ -31520,7 +31520,7 @@ msgstr ""
 #: ../../source/markdown/podman.1.md:166
 msgid ""
 "On remote clients, including Mac and Windows (excluding WSL2) machines, "
-"logging is directed to the file $HOME/.config/containers/podman.log."
+"logging is directed to the file $HOME/.config/pycabbage/podman.log."
 msgstr ""
 
 #: ../../source/markdown/podman.1.md:168
@@ -32038,7 +32038,7 @@ msgstr ""
 #: ../../source/markdown/podman.1.md:456
 msgid ""
 "For more information, see the [Podman Troubleshooting "
-"Page](https://github.com/containers/podman/blob/main/troubleshooting.md)."
+"Page](https://github.com/pycabbage/podman/blob/main/troubleshooting.md)."
 msgstr ""
 
 #: ../../source/markdown/podman.1.md:459

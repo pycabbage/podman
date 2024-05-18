@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/containers/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
 	"github.com/containers/storage/pkg/homedir"
 )
 

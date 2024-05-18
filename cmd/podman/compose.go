@@ -12,8 +12,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/containers/podman/v5/cmd/podman/registry"
-	"github.com/containers/podman/v5/pkg/errorhandling"
+	"github.com/pycabbage/podman/v5/cmd/podman/registry"
+	"github.com/pycabbage/podman/v5/pkg/errorhandling"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
@@ -160,9 +160,9 @@ func composeEnv() ([]string, error) {
 		// a continuous catch-up game, disable buildkit on the client
 		// side.
 		//
-		// See https://github.com/containers/podman/issues/18617#issuecomment-1600495841
+		// See https://github.com/pycabbage/podman/issues/18617#issuecomment-1600495841
 		"DOCKER_BUILDKIT=0",
-		// FIXME: DOCKER_CONFIG is limited by containers/podman/issues/18617
+		// FIXME: DOCKER_CONFIG is limited by pycabbage/podman/issues/18617
 		//        and it remains unclear which default path should be set
 		//        w.r.t. Docker compatibility and a smooth experience of podman-login
 		//        working with podman-compose _by default_.

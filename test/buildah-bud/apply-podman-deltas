@@ -185,7 +185,7 @@ skip "argument-order incompatible with podman" \
 skip "podman-build fails with 'context must be a directory'" \
      "bud with specified context should succeed if context contains existing Dockerfile"
 
-# See https://github.com/containers/podman/pull/20483#issuecomment-1782683979
+# See https://github.com/pycabbage/podman/pull/20483#issuecomment-1782683979
 skip "does not pass in Podman CI: needs investigation" \
      "bud with --no-hostname"
 
@@ -239,7 +239,7 @@ skip_if_remote "--output option not implemented in podman-remote" \
                "build with custom build output for multi-stage-cached and output rootfs to directory" \
                "build with custom build output for multi-stage and output rootfs to directory"
 
-# https://github.com/containers/podman/issues/14544
+# https://github.com/pycabbage/podman/issues/14544
 skip_if_remote "logfile not implemented on remote" "bud-logfile-with-split-logfile-by-platform"
 
 skip_if_remote "envariables do not automatically work with -remote." \

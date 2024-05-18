@@ -256,7 +256,7 @@ do_preexec_hooks (char **argv, int argc)
 {
   // Access the preexec_hooks_dir indicator file
   // return without processing if the file doesn't exist
-  char preexec_hooks_path[] = "/etc/containers/podman_preexec_hooks.txt";
+  char preexec_hooks_path[] = "/etc/pycabbage/podman_preexec_hooks.txt";
   if (access(preexec_hooks_path, F_OK) != 0) {
     return;
   }

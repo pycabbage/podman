@@ -3,12 +3,12 @@ package integration
 import (
 	"fmt"
 
-	. "github.com/containers/podman/v5/test/utils"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
 
-// system reset must run serial: https://github.com/containers/podman/issues/17903
+// system reset must run serial: https://github.com/pycabbage/podman/issues/17903
 var _ = Describe("podman system reset", Serial, func() {
 
 	It("podman system reset", func() {

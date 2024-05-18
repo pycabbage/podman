@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/containers/image/v5/manifest"
-	"github.com/containers/podman/v5/pkg/signal"
+	"github.com/pycabbage/podman/v5/pkg/signal"
 )
 
 type InspectIDMappings struct {

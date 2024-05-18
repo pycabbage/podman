@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/containers/common/pkg/strongunits"
-	"github.com/containers/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
 )
 
 // defaultQMPTimeout is the timeout duration for the

@@ -12,7 +12,7 @@ development efforts occur on the *main* branch.  Branches with a
 
 ## Release workflow expectations
 
-* You have push access to the [upstream podman repository](https://github.com/containers/podman.git)
+* You have push access to the [upstream podman repository](https://github.com/pycabbage/podman.git)
 * You understand all basic `git` operations and concepts, like creating commits,
   local vs. remote branches, rebasing, and conflict resolution.
 * You have access to your public and private *GPG* keys.
@@ -88,7 +88,7 @@ spelled with complete minutiae.
       merge order introduced bugs/defects.  To establish a clean
       baseline, observe the initial CI run on the branch for any unexpected
       failures.  This can be done by going directly to
-      `https://cirrus-ci.com/github/containers/podman/vX.Y`
+      `https://cirrus-ci.com/github/pycabbage/podman/vX.Y`
    1. If there are CI test or automation boops that need fixing on the branch,
       attend to them using normal PR process (to *main* first, then backport
       changes to the new branch).  Ideally, CI should be "green" on the new
@@ -100,7 +100,7 @@ spelled with complete minutiae.
          the VM images ***will*** be permanently pruned after 60 days of inactivity
          and are hard/impossible to re-create accurately.
       1. Go to
-         [https://cirrus-ci.com/github/containers/podman](https://cirrus-ci.com/github/containers/podman)
+         [https://cirrus-ci.com/github/pycabbage/podman](https://cirrus-ci.com/github/pycabbage/podman)
          and press the "gear" (Repository Settings) button on the top-right.
       1. At the bottom of the settings page is a table of cron-job names, branches,
          schedule, and recent status.  Below that is an editable new-entry line.
@@ -186,7 +186,7 @@ spelled with complete minutiae.
    1. Commit these changes with the message `Bump to X.Y.Z-dev`.
    1. Push your local branch to your GitHub fork (and the PR) again.
    1. The PR should now have two commits that look very similar to
-      https://github.com/containers/podman/pull/7787
+      https://github.com/pycabbage/podman/pull/7787
       Note: Backports and release note commits may also be included in the release PR.
    1. Wait for at least all the "Build" and "Verify" (or similar) CI Testing
       steps to complete successfully.  No need to wait for complete integration
@@ -205,7 +205,7 @@ spelled with complete minutiae.
 
    1. When the tag was pushed, an automated build was created. Locate this
       by starting from
-      `https://github.com/containers/podman/tags` and finding the recent entry
+      `https://github.com/pycabbage/podman/tags` and finding the recent entry
       for the pushed tag.  Under the tag name will be a timestamp and abbrieviated
       commit hash, for example `<> 5b2585f`.  Click the commit-hash link.
    1. In the upper-left most corner, just to the left of the "Bump to vX.Y"
@@ -245,7 +245,7 @@ spelled with complete minutiae.
 
    1. In the directory where you downloaded the archives, run
       `sha256sum *.tar.gz *.zip > shasums` to generate SHA sums.
-   1. Go to `https://github.com/containers/podman/releases/tag/vX.Y.Z` and
+   1. Go to `https://github.com/pycabbage/podman/releases/tag/vX.Y.Z` and
       press the "Edit Release" button.  Change the name to the form `vX.Y.Z`
    1. If this is a release candidate be certain to click the pre-release
       checkbox at the bottom of the page.
@@ -321,6 +321,6 @@ spelled with complete minutiae.
          and any other appropriate tags.
       1. For all releases, including patch releases and RC's, send an email to the [podman](mailto:podman@lists.podman.io) and [podman-desktop](mailto:podman-desktop@lists.podman.io) mailing lists.
          Link the to release blog and GitHub release.
-      1. Update [LATEST_VERSION](https://github.com/containers/podman.io/blob/main/static/data/global.ts) on the Podman.io website.
+      1. Update [LATEST_VERSION](https://github.com/pycabbage/podman.io/blob/main/static/data/global.ts) on the Podman.io website.
       1. Tweet the release. Make a Mastodon post about the release.
       1. RC's can also be announced if needed.

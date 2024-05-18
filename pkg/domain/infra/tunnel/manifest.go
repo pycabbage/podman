@@ -7,10 +7,10 @@ import (
 	"strings"
 
 	"github.com/containers/image/v5/types"
-	"github.com/containers/podman/v5/pkg/bindings/images"
-	"github.com/containers/podman/v5/pkg/bindings/manifests"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	envLib "github.com/containers/podman/v5/pkg/env"
+	"github.com/pycabbage/podman/v5/pkg/bindings/images"
+	"github.com/pycabbage/podman/v5/pkg/bindings/manifests"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	envLib "github.com/pycabbage/podman/v5/pkg/env"
 	"golang.org/x/exp/slices"
 )
 

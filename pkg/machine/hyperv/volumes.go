@@ -8,9 +8,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/hyperv/vsock"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/hyperv/vsock"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 	"github.com/sirupsen/logrus"
 )
 

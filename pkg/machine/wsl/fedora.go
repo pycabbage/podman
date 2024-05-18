@@ -11,13 +11,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/version"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/version"
 	"github.com/sirupsen/logrus"
 )
 
 const (
-	latestReleaseURL = "https://github.com/containers/podman-machine-wsl-os/releases/latest/download"
+	latestReleaseURL = "https://github.com/pycabbage/podman-machine-wsl-os/releases/latest/download"
 )
 
 type FedoraDownload struct {

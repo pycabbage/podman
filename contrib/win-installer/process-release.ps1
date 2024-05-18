@@ -63,7 +63,7 @@ if ($args.Count -gt 1 -and $args[1].Length -gt 0) {
 
 $base_url = "$ENV:FETCH_BASE_URL"
 if ($base_url.Length -le 0) {
-    $base_url = "https://github.com/containers/podman"
+    $base_url = "https://github.com/pycabbage/podman"
 }
 
 $version = $args[0]

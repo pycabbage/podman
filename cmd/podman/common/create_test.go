@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/containers/podman/v5/cmd/podman/common"
-	"github.com/containers/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/cmd/podman/common"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
 	"github.com/stretchr/testify/assert"
 )
 

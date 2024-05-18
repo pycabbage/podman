@@ -3,10 +3,10 @@ package shim
 import (
 	"fmt"
 
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/env"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 )
 
 func setupMachineSockets(mc *vmconfigs.MachineConfig, dirs *define.MachineDirs) ([]string, string, machine.APIForwardingState, error) {

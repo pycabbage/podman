@@ -33,7 +33,7 @@ load helpers.network
     run_podman network rm $net1 $net2 $net3
 }
 
-# Copied from tsweeney's https://github.com/containers/podman/issues/4827
+# Copied from tsweeney's https://github.com/pycabbage/podman/issues/4827
 @test "podman networking: port on localhost" {
     random_1=$(random_string 30)
     random_2=$(random_string 30)
@@ -446,7 +446,7 @@ load helpers.network
     run_podman network rm -t 0 -f $netname
 }
 
-# Test for https://github.com/containers/podman/issues/10052
+# Test for https://github.com/pycabbage/podman/issues/10052
 # bats test_tags=distro-integration
 @test "podman network connect/disconnect with port forwarding" {
     random_1=$(random_string 30)
@@ -740,7 +740,7 @@ nameserver 8.8.8.8" "nameserver order is correct"
 
             # we have to rety ncat as it can flake as we exec in the background so nc -l
             # might not have bound the port yet, retry seems simpler than checking if the
-            # port is bound in the container, https://github.com/containers/podman/issues/21561.
+            # port is bound in the container, https://github.com/pycabbage/podman/issues/21561.
             retries=5
             while [[ $retries -gt 0 ]]; do
                 # -w 1 adds a 1 second timeout. For some reason, ubuntu's ncat
@@ -838,7 +838,7 @@ EOF
 }
 
 @test "podman rootless netns works when XDG_RUNTIME_DIR includes symlinks" {
-    # regression test for https://github.com/containers/podman/issues/14606
+    # regression test for https://github.com/pycabbage/podman/issues/14606
     is_rootless || skip "only meaningful for rootless"
 
     # Create a tmpdir symlink pointing to /run, and use it briefly
@@ -891,7 +891,7 @@ EOF
      fi
 }
 
-# Test for https://github.com/containers/podman/issues/18615
+# Test for https://github.com/pycabbage/podman/issues/18615
 @test "podman network cleanup --userns + --restart" {
     skip_if_cgroupsv1 "run --uidmap fails on cgroups v1 (issue 15025, wontfix)"
 
@@ -921,7 +921,7 @@ EOF
 
     # And now because of all the fun we have to check the same with slirp4netns and pasta because
     # that uses slightly different code paths. Note this would deadlock before the fix.
-    # https://github.com/containers/podman/issues/21477
+    # https://github.com/pycabbage/podman/issues/21477
     run_podman 1 run --name $cname2 --network slirp4netns --restart on-failure:2 --userns keep-id $IMAGE false
     run_podman inspect --format "{{.RestartCount}}" $cname2
     assert "$output" == "2" "RestartCount for failing container with slirp4netns"

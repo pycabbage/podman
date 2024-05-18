@@ -5,7 +5,7 @@ import (
 
 	"github.com/containers/common/pkg/config"
 	"github.com/containers/common/pkg/ssh"
-	"github.com/containers/podman/v5/pkg/domain/entities/reports"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities/reports"
 )
 
 type ImageEngine interface { //nolint:interfacebloat

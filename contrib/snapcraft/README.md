@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/containers/podman.io/main/images/podman.svg?sanitize=true" alt="podman">
+  <img src="https://raw.githubusercontent.com/pycabbage/podman.io/main/images/podman.svg?sanitize=true" alt="podman">
   <br />
 </h1>
 

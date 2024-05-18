@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"text/template"
 
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	. "github.com/containers/podman/v5/test/utils"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	. "github.com/onsi/gomega/gexec"
@@ -90,7 +90,7 @@ registries = []`
 		Expect(search.OutputToString()).To(ContainSubstring("quay.io/libpod/testdigest_v2s1"))
 		Expect(search.OutputToString()).To(ContainSubstring("Test image used by buildah regression tests"))
 
-		// Test for https://github.com/containers/podman/issues/11894
+		// Test for https://github.com/pycabbage/podman/issues/11894
 		contents := make([]entities.ImageSearchReport, 0)
 		err := json.Unmarshal(search.Out.Contents(), &contents)
 		Expect(err).ToNot(HaveOccurred())
@@ -110,7 +110,7 @@ registries = []`
 		Expect(search.OutputToString()).To(ContainSubstring("3.2"))
 	})
 
-	// Test for https://github.com/containers/podman/issues/11894
+	// Test for https://github.com/pycabbage/podman/issues/11894
 	It("podman search no-trunc=false flag", func() {
 		search := podmanTest.Podman([]string{"search", "--no-trunc=false", "alpine", "--format={{.Description}}"})
 		search.WaitWithDefaultTimeout()

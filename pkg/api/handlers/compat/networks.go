@@ -9,13 +9,13 @@ import (
 
 	nettypes "github.com/containers/common/libnetwork/types"
 	netutil "github.com/containers/common/libnetwork/util"
-	"github.com/containers/podman/v5/libpod"
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/api/handlers/utils"
-	api "github.com/containers/podman/v5/pkg/api/types"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	"github.com/containers/podman/v5/pkg/domain/infra/abi"
-	"github.com/containers/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/libpod"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/api/handlers/utils"
+	api "github.com/pycabbage/podman/v5/pkg/api/types"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/pkg/domain/infra/abi"
+	"github.com/pycabbage/podman/v5/pkg/util"
 	"github.com/docker/docker/api/types"
 	"golang.org/x/exp/maps"
 
@@ -77,7 +77,7 @@ func convertLibpodNetworktoDockerNetwork(runtime *libpod.Runtime, statuses []abi
 			for _, dev := range netData.Interfaces {
 				for _, subnet := range dev.Subnets {
 					// Note the docker API really wants the full CIDR subnet not just a single ip.
-					// https://github.com/containers/podman/pull/12328
+					// https://github.com/pycabbage/podman/pull/12328
 					if netutil.IsIPv4(subnet.IPNet.IP) {
 						ipv4Address = subnet.IPNet.String()
 					} else {
@@ -123,7 +123,7 @@ func convertLibpodNetworktoDockerNetwork(runtime *libpod.Runtime, statuses []abi
 	// the network backend and will overwrite it which is not good.
 	options := maps.Clone(network.Options)
 	// bridge always has isolate set in the compat API but we should not return it to not confuse callers
-	// https://github.com/containers/podman/issues/15580
+	// https://github.com/pycabbage/podman/issues/15580
 	delete(options, nettypes.IsolateOption)
 
 	report := types.NetworkResource{

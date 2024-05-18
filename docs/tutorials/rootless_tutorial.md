@@ -47,7 +47,7 @@ grep johndoe /etc/subuid /etc/subgid
 /etc/subgid:johndoe:100000:65536
 ```
 
-If you update either `/etc/subuid` or `/etc/subgid`, you need to stop all the running containers owned by the user and kill the pause process that is running on the system for that user.  This can be done automatically by running [`podman system migrate`](https://github.com/containers/podman/blob/main/docs/source/markdown/podman-system-migrate.1.md) as that user.
+If you update either `/etc/subuid` or `/etc/subgid`, you need to stop all the running containers owned by the user and kill the pause process that is running on the system for that user.  This can be done automatically by running [`podman system migrate`](https://github.com/pycabbage/podman/blob/main/docs/source/markdown/podman-system-migrate.1.md) as that user.
 
 #### Giving access to additional groups
 
@@ -196,6 +196,6 @@ Another consideration in regards to volumes:
 
 ## More information
 
-If you are still experiencing problems running Podman in a rootless environment, please refer to the [Shortcomings of Rootless Podman](https://github.com/containers/podman/blob/main/rootless.md) page which lists known issues and solutions to known issues in this environment.
+If you are still experiencing problems running Podman in a rootless environment, please refer to the [Shortcomings of Rootless Podman](https://github.com/pycabbage/podman/blob/main/rootless.md) page which lists known issues and solutions to known issues in this environment.
 
 For more information on Podman and its subcommands, follow the links on the main [README.md](../../README.md#podman-information-for-developers) page or the [podman.io](https://podman.io) web site.

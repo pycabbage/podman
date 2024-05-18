@@ -16,13 +16,13 @@ import (
 
 	"github.com/containers/common/pkg/config"
 	"github.com/containers/common/pkg/strongunits"
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/env"
-	"github.com/containers/podman/v5/pkg/machine/ignition"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
-	"github.com/containers/podman/v5/pkg/machine/wsl/wutil"
-	"github.com/containers/podman/v5/utils"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
+	"github.com/pycabbage/podman/v5/pkg/machine/ignition"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine/wsl/wutil"
+	"github.com/pycabbage/podman/v5/utils"
 	"github.com/containers/storage/pkg/homedir"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/text/encoding/unicode"
@@ -191,7 +191,7 @@ func configureSystem(mc *vmconfigs.MachineConfig, dist string) error {
 		return err
 	}
 
-	if err := wslInvoke(dist, "sh", "-c", "echo wsl > /etc/containers/podman-machine"); err != nil {
+	if err := wslInvoke(dist, "sh", "-c", "echo wsl > /etc/pycabbage/podman-machine"); err != nil {
 		return fmt.Errorf("could not create podman-machine file for guest OS: %w", err)
 	}
 

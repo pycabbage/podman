@@ -4,7 +4,7 @@ Background
 For years we've been needing a way to test podman upgrades; this
 became much more critical on December 7, 2020, when Matt disclosed
 a bug he had found over the weekend
-([#8613](https://github.com/containers/podman/issues/8613))
+([#8613](https://github.com/pycabbage/podman/issues/8613))
 in which reuse of a previously-defined field name would
 result in fatal JSON decode failures if current-podman were
 to try reading containers created with podman <= 1.8 (FIXME: confirm)

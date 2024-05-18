@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"syscall"
 
-	"github.com/containers/podman/v5/libpod/lock/shm"
+	"github.com/pycabbage/podman/v5/libpod/lock/shm"
 )
 
 // SHMLockManager manages shared memory locks.

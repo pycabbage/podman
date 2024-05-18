@@ -145,7 +145,7 @@ function remove_secret() {
 
 @test "quadlet - basic" {
     # Network=none is to work around a Pasta bug, can be removed once a patched Pasta is available.
-    # Ref https://github.com/containers/podman/pull/21563#issuecomment-1965145324
+    # Ref https://github.com/pycabbage/podman/pull/21563#issuecomment-1965145324
     local quadlet_file=$PODMAN_TMPDIR/basic_$(random_string).container
     cat > $quadlet_file <<EOF
 [Container]
@@ -1476,7 +1476,7 @@ EOF
     run_podman rmi $(pause_image)
 }
 
-# This test reproduces https://github.com/containers/podman/issues/20432
+# This test reproduces https://github.com/pycabbage/podman/issues/20432
 # In order to reproduce the issue, the image in the FROM must no be available locally
 # and must not have a tag. The first forces Pull and the second the resolution where the crash occurs
 # Using a local registry does not work since kube play does not pass the autofile and tls-verify flags to the build

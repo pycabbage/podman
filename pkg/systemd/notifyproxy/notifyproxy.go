@@ -13,7 +13,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/containers/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/libpod/define"
 	"github.com/coreos/go-systemd/v22/daemon"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/sys/unix"
@@ -115,7 +115,7 @@ func New(tmpDir string) (*NotifyProxy, error) {
 // when the socket is closed.
 func (p *NotifyProxy) listen() {
 	go func() {
-		// See https://github.com/containers/podman/issues/16515 for a description of the protocol.
+		// See https://github.com/pycabbage/podman/issues/16515 for a description of the protocol.
 		fdSize := unix.CmsgSpace(4)
 		buffer := make([]byte, _notifyBufferMax)
 		oob := make([]byte, _notifyFdMax*fdSize)

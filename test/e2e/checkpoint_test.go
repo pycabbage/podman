@@ -11,11 +11,11 @@ import (
 	"time"
 
 	"github.com/checkpoint-restore/go-criu/v7/stats"
-	"github.com/containers/podman/v5/pkg/checkpoint/crutils"
-	"github.com/containers/podman/v5/pkg/criu"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	. "github.com/containers/podman/v5/test/utils"
-	"github.com/containers/podman/v5/utils"
+	"github.com/pycabbage/podman/v5/pkg/checkpoint/crutils"
+	"github.com/pycabbage/podman/v5/pkg/criu"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	. "github.com/pycabbage/podman/v5/test/utils"
+	"github.com/pycabbage/podman/v5/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	. "github.com/onsi/gomega/gexec"
@@ -697,7 +697,7 @@ var _ = Describe("Podman checkpoint", func() {
 	})
 	It("podman checkpoint and restore container with root file-system changes using --ignore-rootfs during restore", func() {
 		// Start the container
-		// test that restore works without network namespace (https://github.com/containers/podman/issues/14389)
+		// test that restore works without network namespace (https://github.com/pycabbage/podman/issues/14389)
 		session := podmanTest.Podman([]string{"run", "--network=none", "-d", "--rm", ALPINE, "top"})
 		session.WaitWithDefaultTimeout()
 		Expect(session).Should(ExitCleanly())

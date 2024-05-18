@@ -7,7 +7,7 @@ load helpers
 load helpers.network
 
 # The existence of this file allows preexec hooks to run.
-preexec_hook_ok_file=/etc/containers/podman_preexec_hooks.txt
+preexec_hook_ok_file=/etc/pycabbage/podman_preexec_hooks.txt
 
 function setup() {
     basic_setup

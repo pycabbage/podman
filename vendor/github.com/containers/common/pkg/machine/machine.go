@@ -12,7 +12,7 @@ type Marker struct {
 }
 
 const (
-	markerFile = "/etc/containers/podman-machine"
+	markerFile = "/etc/pycabbage/podman-machine"
 	Wsl        = "wsl"
 	Qemu       = "qemu"
 	AppleHV    = "applehv"

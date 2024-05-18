@@ -2,7 +2,7 @@
 package swagger
 
 import (
-	"github.com/containers/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
 	"github.com/docker/docker/api/types"
 )
 

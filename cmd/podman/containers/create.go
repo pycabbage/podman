@@ -13,14 +13,14 @@ import (
 	"github.com/containers/common/pkg/config"
 	"github.com/containers/image/v5/transports/alltransports"
 	"github.com/containers/image/v5/types"
-	"github.com/containers/podman/v5/cmd/podman/common"
-	"github.com/containers/podman/v5/cmd/podman/registry"
-	"github.com/containers/podman/v5/cmd/podman/utils"
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	"github.com/containers/podman/v5/pkg/specgen"
-	"github.com/containers/podman/v5/pkg/specgenutil"
-	"github.com/containers/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/cmd/podman/common"
+	"github.com/pycabbage/podman/v5/cmd/podman/registry"
+	"github.com/pycabbage/podman/v5/cmd/podman/utils"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/pkg/specgen"
+	"github.com/pycabbage/podman/v5/pkg/specgenutil"
+	"github.com/pycabbage/podman/v5/pkg/util"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"golang.org/x/exp/slices"
@@ -330,7 +330,7 @@ func CreateInit(c *cobra.Command, vals entities.ContainerCreateOptions, isInfra 
 	}
 
 	// Docker-compatibility: the "-h" flag for run/create is reserved for
-	// the hostname (see https://github.com/containers/podman/issues/1367).
+	// the hostname (see https://github.com/pycabbage/podman/issues/1367).
 
 	return vals, nil
 }

@@ -72,7 +72,7 @@ EOF
     fi
 
     # The --rm option means the container should no longer exist.
-    # However https://github.com/containers/podman/issues/12917 meant
+    # However https://github.com/pycabbage/podman/issues/12917 meant
     # that the container cleanup triggered by conmon's --exit-cmd
     # could fail, leaving the container in place.
     #

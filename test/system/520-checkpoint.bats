@@ -223,7 +223,7 @@ function teardown() {
 }
 
 @test "podman checkpoint/restore ip and mac handling" {
-    # Refer to https://github.com/containers/podman/issues/16666#issuecomment-1337860545
+    # Refer to https://github.com/pycabbage/podman/issues/16666#issuecomment-1337860545
     # for the correct behavior, this should cover all cases listed there.
     local netname=net-$(random_string)
     local subnet="$(random_rfc1918_subnet)"

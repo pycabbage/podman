@@ -12,10 +12,10 @@ import (
 	"github.com/containers/common/libnetwork/types"
 	"github.com/containers/common/pkg/config"
 	"github.com/containers/common/pkg/machine"
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/libpod/events"
-	"github.com/containers/podman/v5/pkg/namespaces"
-	"github.com/containers/podman/v5/pkg/rootless"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/libpod/events"
+	"github.com/pycabbage/podman/v5/pkg/namespaces"
+	"github.com/pycabbage/podman/v5/pkg/rootless"
 	"github.com/containers/storage/pkg/lockfile"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/exp/slices"
@@ -179,7 +179,7 @@ func (c *Container) getContainerNetworkInfo() (*define.InspectNetworkSettings, e
 		if err != nil {
 			return nil, err
 		}
-		// see https://github.com/containers/podman/issues/10090
+		// see https://github.com/pycabbage/podman/issues/10090
 		// the container has to be locked for syncContainer()
 		netNsCtr.lock.Lock()
 		defer netNsCtr.lock.Unlock()
@@ -220,7 +220,7 @@ func (c *Container) getContainerNetworkInfo() (*define.InspectNetworkSettings, e
 			return settings, nil
 		} else if set {
 			// network none case, if running allow user to join netns via sandbox key
-			// https://github.com/containers/podman/issues/16716
+			// https://github.com/pycabbage/podman/issues/16716
 			if c.state.PID > 0 {
 				settings.SandboxKey = fmt.Sprintf("/proc/%d/ns/net", c.state.PID)
 			}

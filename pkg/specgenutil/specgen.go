@@ -11,14 +11,14 @@ import (
 
 	"github.com/containers/common/pkg/config"
 	"github.com/containers/image/v5/manifest"
-	"github.com/containers/podman/v5/cmd/podman/parse"
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	envLib "github.com/containers/podman/v5/pkg/env"
-	"github.com/containers/podman/v5/pkg/namespaces"
-	"github.com/containers/podman/v5/pkg/specgen"
-	systemdDefine "github.com/containers/podman/v5/pkg/systemd/define"
-	"github.com/containers/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/cmd/podman/parse"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	envLib "github.com/pycabbage/podman/v5/pkg/env"
+	"github.com/pycabbage/podman/v5/pkg/namespaces"
+	"github.com/pycabbage/podman/v5/pkg/specgen"
+	systemdDefine "github.com/pycabbage/podman/v5/pkg/systemd/define"
+	"github.com/pycabbage/podman/v5/pkg/util"
 	"github.com/docker/go-units"
 	"github.com/opencontainers/runtime-spec/specs-go"
 	"github.com/opencontainers/selinux/go-selinux"
@@ -287,7 +287,7 @@ func GenRlimits(ulimits []string) ([]specs.POSIXRlimit, error) {
 		}
 		// `ulimitNameMapping` from go-units uses lowercase and names
 		// without prefixes, e.g. `RLIMIT_NOFILE` should be converted to `nofile`.
-		// https://github.com/containers/podman/issues/9803
+		// https://github.com/pycabbage/podman/issues/9803
 		u := strings.TrimPrefix(strings.ToLower(ulimit), rlimitPrefix)
 		ul, err := units.ParseUlimit(u)
 		if err != nil {

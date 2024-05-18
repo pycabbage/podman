@@ -1,6 +1,6 @@
 FROM docker.io/library/golang:1.22-alpine AS build-img
-COPY ./ /go/src/github.com/containers/podman/
-WORKDIR /go/src/github.com/containers/podman
+COPY ./ /go/src/github.com/pycabbage/podman/
+WORKDIR /go/src/github.com/pycabbage/podman
 RUN GO111MODULE=off go build -o /testvol ./test/testvol
 
 FROM alpine

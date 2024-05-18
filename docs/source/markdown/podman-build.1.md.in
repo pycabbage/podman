@@ -609,7 +609,7 @@ and it only works if the GitHub repository is a dedicated repository.
 
 Build image from specified git repository downloaded into temporary location used as the build context:
 ```
-$ podman build -t hello  https://github.com/containers/PodmanHello.git
+$ podman build -t hello  https://github.com/pycabbage/podmanHello.git
 $ podman run hello
 ```
 

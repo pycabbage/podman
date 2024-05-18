@@ -43,7 +43,7 @@ jobs:
         id: checkpr
         run: |
           prs=$(gh pr list \
-            --repo containers/podman.io \
+            --repo pycabbage/podman.io \
             --head bump-podmanv${{ steps.getversion.outputs.version }} \
             --state open \
             --json title \
@@ -61,7 +61,7 @@ jobs:
             steps.getversion.outputs.notRC == 'true' &&
             steps.checkpr.outputs.prexists == 'false'
         with:
-          repository: containers/podman.io
+          repository: pycabbage/podman.io
           ref: refs/heads/main
           token: ${{ secrets.PODMANBOT_TOKEN }}
 
@@ -116,6 +116,6 @@ jobs:
             --title "Bump Podman to v${{ steps.getversion.outputs.version }}" \
             --body  "Bump Podman to v${{ steps.getversion.outputs.version }}" \
             --head "podmanbot:$bumpbranch" \
-            --base "main" -R "containers/podman.io"
+            --base "main" -R "pycabbage/podman.io"
         env:
           GH_TOKEN: ${{ secrets.PODMANBOT_TOKEN }}

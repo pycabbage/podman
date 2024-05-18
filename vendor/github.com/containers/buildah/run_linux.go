@@ -1147,7 +1147,7 @@ func addOrReplaceMount(mounts []specs.Mount, mount specs.Mount) []specs.Mount {
 
 // setupSpecialMountSpecChanges creates special mounts for depending on the namespaces
 // logic taken from podman and adapted for buildah
-// https://github.com/containers/podman/blob/4ba71f955a944790edda6e007e6d074009d437a7/pkg/specgen/generate/oci.go#L178
+// https://github.com/pycabbage/podman/blob/4ba71f955a944790edda6e007e6d074009d437a7/pkg/specgen/generate/oci.go#L178
 func setupSpecialMountSpecChanges(spec *specs.Spec, shmSize string) ([]specs.Mount, error) {
 	mounts := spec.Mounts
 	isRootless := unshare.IsRootless()

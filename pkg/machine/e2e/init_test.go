@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/utils"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	. "github.com/onsi/gomega/gexec"
@@ -207,7 +207,7 @@ var _ = Describe("podman machine init", func() {
 		Expect(err).ToNot(HaveOccurred())
 		_, err = os.CreateTemp(tmpDir, "example")
 		Expect(err).ToNot(HaveOccurred())
-		// Test long target path, see https://github.com/containers/podman/issues/22226
+		// Test long target path, see https://github.com/pycabbage/podman/issues/22226
 		mount := tmpDir + ":/very-long-test-mount-dir-path-more-than-thirty-six-bytes"
 		defer func() { _ = utils.GuardedRemoveAll(tmpDir) }()
 
@@ -374,7 +374,7 @@ var _ = Describe("podman machine init", func() {
 
 var p4Config = []byte(`{
  "ConfigPath": {
-  "Path": "/home/baude/.config/containers/podman/machine/qemu/podman-machine-default.json"
+  "Path": "/home/baude/.config/pycabbage/podman/machine/qemu/podman-machine-default.json"
  },
  "CmdLine": [
   "/usr/bin/qemu-system-x86_64",
@@ -387,7 +387,7 @@ var p4Config = []byte(`{
   "-smp",
   "12",
   "-fw_cfg",
-  "name=opt/com.coreos/config,file=/home/baude/.config/containers/podman/machine/qemu/podman-machine-default.ign",
+  "name=opt/com.coreos/config,file=/home/baude/.config/pycabbage/podman/machine/qemu/podman-machine-default.ign",
   "-qmp",
   "unix:/run/user/1000/podman/qmp_podman-machine-default.sock,server=on,wait=off",
   "-netdev",
@@ -405,17 +405,17 @@ var p4Config = []byte(`{
   "-virtfs",
   "local,path=/home/baude,mount_tag=vol0,security_model=none",
   "-drive",
-  "if=virtio,file=/home/baude/.local/share/containers/podman/machine/qemu/podman-machine-default_fedora-coreos-39.20240128.2.2-qemu.x86_64.qcow2"
+  "if=virtio,file=/home/baude/.local/share/pycabbage/podman/machine/qemu/podman-machine-default_fedora-coreos-39.20240128.2.2-qemu.x86_64.qcow2"
  ],
  "Rootful": false,
  "UID": 1000,
  "HostUserModified": false,
  "IgnitionFilePath": {
-  "Path": "/home/baude/.config/containers/podman/machine/qemu/podman-machine-default.ign"
+  "Path": "/home/baude/.config/pycabbage/podman/machine/qemu/podman-machine-default.ign"
  },
  "ImageStream": "testing",
  "ImagePath": {
-  "Path": "/home/baude/.local/share/containers/podman/machine/qemu/podman-machine-default_fedora-coreos-39.20240128.2.2-qemu.x86_64.qcow2"
+  "Path": "/home/baude/.local/share/pycabbage/podman/machine/qemu/podman-machine-default_fedora-coreos-39.20240128.2.2-qemu.x86_64.qcow2"
  },
  "Mounts": [
   {
@@ -447,7 +447,7 @@ var p4Config = []byte(`{
  "DiskSize": 100,
  "Memory": 2048,
  "USBs": [],
- "IdentityPath": "/home/baude/.local/share/containers/podman/machine/machine",
+ "IdentityPath": "/home/baude/.local/share/pycabbage/podman/machine/machine",
  "Port": 38419,
  "RemoteUsername": "core",
  "Starting": false,

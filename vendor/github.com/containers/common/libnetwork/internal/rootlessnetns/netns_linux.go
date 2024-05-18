@@ -350,7 +350,7 @@ func (n *Netns) setupMounts() error {
 	// Because the kernel will follow the symlink before mounting, it is not
 	// possible to mount a file at /etc/resolv.conf. We have to ensure that
 	// the link target will be available in the mount ns.
-	// see: https://github.com/containers/podman/issues/10855
+	// see: https://github.com/pycabbage/podman/issues/10855
 	resolvePath := resolvconf.DefaultResolvConf
 	linkCount := 0
 	for i := 1; i < len(resolvePath); i++ {
@@ -359,10 +359,10 @@ func (n *Netns) setupMounts() error {
 		// -> /run/systemd/resolve/stub-resolv.conf -> /run/systemd/resolve/resolv.conf
 		// we would put the netns resolv.conf file to the last path. However this will
 		// break dns because the second link does not exist in the mount ns.
-		// see https://github.com/containers/podman/issues/11222
+		// see https://github.com/pycabbage/podman/issues/11222
 		//
 		// We also need to resolve all path components not just the last file.
-		// see https://github.com/containers/podman/issues/12461
+		// see https://github.com/pycabbage/podman/issues/12461
 
 		if resolvePath[i] != '/' {
 			// if we are at the last char we need to inc i by one because there is no final slash
@@ -418,7 +418,7 @@ func (n *Netns) setupMounts() error {
 	//
 	// Otherwise our bind-mount for /run/systemd/resolve/stub-resolv.conf is unmounted
 	// when systemd-resolved unlinks and recreates /run/systemd/resolve/stub-resolv.conf on the host.
-	// see: https://github.com/containers/podman/issues/10929
+	// see: https://github.com/pycabbage/podman/issues/10929
 	if strings.HasPrefix(resolvePath, "/run/systemd/resolve/") {
 		rsr := n.getPath("/run/systemd/resolve")
 		err = mountAndMkdirDest("", rsr, tmpfs, unix.MS_NOEXEC|unix.MS_NOSUID|unix.MS_NODEV)

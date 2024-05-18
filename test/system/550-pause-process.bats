@@ -11,7 +11,7 @@ function setup_file() {
     # We have to stop the background registry here. These tests kill the podman pause
     # process which means commands after that are in a new one and when the cleanup
     # later tries to stop the registry container it will be in the wrong ns and can fail.
-    # https://github.com/containers/podman/pull/21563#issuecomment-1960047648
+    # https://github.com/pycabbage/podman/pull/21563#issuecomment-1960047648
     stop_registry
 }
 
@@ -31,14 +31,14 @@ function _check_pause_process() {
            "Pause process $pause_pid has an unexpected name"
 }
 
-# Test for https://github.com/containers/podman/issues/17903
+# Test for https://github.com/pycabbage/podman/issues/17903
 @test "rootless podman only ever uses single pause process" {
     skip_if_not_rootless "pause process is only used as rootless"
     skip_if_remote "--tmpdir not supported via remote"
 
     # There are nasty bugs when we are not in the correct userns,
     # we have good reproducer to see how things can go wrong here:
-    # https://github.com/containers/podman/issues/17903#issuecomment-1497232184
+    # https://github.com/pycabbage/podman/issues/17903#issuecomment-1497232184
 
     # To prevent any issues we should only ever have a single pause process running,
     # regardless of any --root/-runroot/--tmpdir values.
@@ -85,7 +85,7 @@ function _check_pause_process() {
            "podman with tmpdir2 should use the same userns created using a tmpdir"
 }
 
-# https://github.com/containers/podman/issues/16091
+# https://github.com/pycabbage/podman/issues/16091
 @test "rootless reexec with sig-proxy" {
     skip_if_not_rootless "pause process is only used as rootless"
     skip_if_remote "system migrate not supported via remote"

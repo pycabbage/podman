@@ -11,7 +11,7 @@ set -eo pipefail
 # this script may be manually run by:
 # 1. export SECRET_CIRRUS_API_KEY=<value>
 # 2. Find an old podman build that failed on `main` or another **branch**.
-#    For example, from https://cirrus-ci.com/github/containers/podman/main
+#    For example, from https://cirrus-ci.com/github/pycabbage/podman/main
 #    (pick an old one from the bottom, since re-running it won't affect anybody)
 # 3. Create a temp. file, like /tmp/fail with a single line, of the form:
 #    <cirrus build id number> <cirrus-cron name>

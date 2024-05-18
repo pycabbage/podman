@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	"github.com/containers/podman/v5/pkg/trust"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/pkg/trust"
 )
 
 func (ir *ImageEngine) ShowTrust(ctx context.Context, args []string, options entities.ShowTrustOptions) (*entities.ShowTrustReport, error) {

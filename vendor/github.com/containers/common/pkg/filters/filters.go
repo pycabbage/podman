@@ -37,7 +37,7 @@ func ComputeUntilTimestamp(filterValues []string) (time.Time, error) {
 // done in older versions of Docker.  We have to do a bit of Yoga to support
 // both - just as Docker does as well.
 //
-// Please refer to https://github.com/containers/podman/issues/6899 for some
+// Please refer to https://github.com/pycabbage/podman/issues/6899 for some
 // background.
 //
 // revive does not like the name because the package is already called filters
@@ -158,7 +158,7 @@ func matchPattern(pattern string, value string) bool {
 // FilterID is a function used to compare an id against a set of ids, if the
 // input is hex we check if the prefix matches. Otherwise we assume it is a
 // regex and try to match that.
-// see https://github.com/containers/podman/issues/18471 for why we do this
+// see https://github.com/pycabbage/podman/issues/18471 for why we do this
 func FilterID(id string, filters []string) bool {
 	for _, want := range filters {
 		isRegex := types.NotHexRegex.MatchString(want)

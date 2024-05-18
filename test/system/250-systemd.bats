@@ -294,7 +294,7 @@ LISTEN_FDNAMES=listen_fdnames" | sort)
     assert "$output" =~ ".*cgroup namespace is not supported with cgroup v1 and systemd mode"
 }
 
-# https://github.com/containers/podman/issues/13153
+# https://github.com/pycabbage/podman/issues/13153
 @test "podman rootless-netns pasta processes should be in different cgroup" {
     is_rootless || skip "only meaningful for rootless"
 
@@ -430,7 +430,7 @@ EOF
     run_podman 125 container rm $service_container
     is "$output" "Error: container .* is the service container of pod(s) .* and cannot be removed without removing the pod(s)"
 
-    # containers/podman/issues/17482: verify that the log-driver for the Pod's containers is NOT passthrough
+    # pycabbage/podman/issues/17482: verify that the log-driver for the Pod's containers is NOT passthrough
     for name in "a" "b"; do
         run_podman container inspect test_pod-${name} --format "{{.HostConfig.LogConfig.Type}}"
         assert $output != "passthrough"

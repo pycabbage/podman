@@ -5,7 +5,7 @@ package libpod
 import (
 	"fmt"
 
-	"github.com/containers/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/libpod/define"
 )
 
 // GetContainerStats gets the running stats for a given container.

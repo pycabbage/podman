@@ -7,9 +7,9 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/containers/podman/v5/pkg/machine/compression"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/ocipull"
+	"github.com/pycabbage/podman/v5/pkg/machine/compression"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/ocipull"
 )
 
 func pullOCITestDisk(finalDir string, vmType define.VMType) error {

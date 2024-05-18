@@ -19,7 +19,7 @@ int main() {
    ~~~~~~~  ~| =(Y_)=-  |   \n\
   ~~~~    ~~~|   U      |~~ \n\
 \n\
-Project:   https://github.com/containers/podman\n\
+Project:   https://github.com/pycabbage/podman\n\
 Website:   https://podman.io\n\
 Documents: https://docs.podman.io\n\
 Twitter:   @Podman_io");

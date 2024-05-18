@@ -274,7 +274,7 @@ EOF
 
     cat >$tmpdir/Dockerfile <<EOF
 FROM $IMAGE
-ADD https://github.com/containers/podman/blob/main/README.md /tmp/
+ADD https://github.com/pycabbage/podman/blob/main/README.md /tmp/
 EOF
     run_podman build -t add_url $tmpdir
     run_podman run --rm add_url stat /tmp/README.md
@@ -1148,7 +1148,7 @@ EOF
 }
 
 @test "podman build --file=https" {
-    run_podman build -t build_test --file=https://raw.githubusercontent.com/containers/podman/main/test/build/from-scratch/Dockerfile $PODMAN_TMPDIR
+    run_podman build -t build_test --file=https://raw.githubusercontent.com/pycabbage/podman/main/test/build/from-scratch/Dockerfile $PODMAN_TMPDIR
 
     run_podman rmi -f build_test
 }

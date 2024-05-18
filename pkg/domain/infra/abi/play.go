@@ -20,23 +20,23 @@ import (
 	"github.com/containers/common/pkg/secrets"
 	"github.com/containers/image/v5/docker/reference"
 	"github.com/containers/image/v5/types"
-	"github.com/containers/podman/v5/cmd/podman/parse"
-	"github.com/containers/podman/v5/libpod"
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/annotations"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	entitiesTypes "github.com/containers/podman/v5/pkg/domain/entities/types"
-	"github.com/containers/podman/v5/pkg/domain/infra/abi/internal/expansion"
-	v1apps "github.com/containers/podman/v5/pkg/k8s.io/api/apps/v1"
-	v1 "github.com/containers/podman/v5/pkg/k8s.io/api/core/v1"
-	metav1 "github.com/containers/podman/v5/pkg/k8s.io/apimachinery/pkg/apis/meta/v1"
-	"github.com/containers/podman/v5/pkg/specgen"
-	"github.com/containers/podman/v5/pkg/specgen/generate"
-	"github.com/containers/podman/v5/pkg/specgen/generate/kube"
-	"github.com/containers/podman/v5/pkg/specgenutil"
-	"github.com/containers/podman/v5/pkg/systemd/notifyproxy"
-	"github.com/containers/podman/v5/pkg/util"
-	"github.com/containers/podman/v5/utils"
+	"github.com/pycabbage/podman/v5/cmd/podman/parse"
+	"github.com/pycabbage/podman/v5/libpod"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/annotations"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	entitiesTypes "github.com/pycabbage/podman/v5/pkg/domain/entities/types"
+	"github.com/pycabbage/podman/v5/pkg/domain/infra/abi/internal/expansion"
+	v1apps "github.com/pycabbage/podman/v5/pkg/k8s.io/api/apps/v1"
+	v1 "github.com/pycabbage/podman/v5/pkg/k8s.io/api/core/v1"
+	metav1 "github.com/pycabbage/podman/v5/pkg/k8s.io/apimachinery/pkg/apis/meta/v1"
+	"github.com/pycabbage/podman/v5/pkg/specgen"
+	"github.com/pycabbage/podman/v5/pkg/specgen/generate"
+	"github.com/pycabbage/podman/v5/pkg/specgen/generate/kube"
+	"github.com/pycabbage/podman/v5/pkg/specgenutil"
+	"github.com/pycabbage/podman/v5/pkg/systemd/notifyproxy"
+	"github.com/pycabbage/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/utils"
 	"github.com/coreos/go-systemd/v22/daemon"
 	"github.com/opencontainers/go-digest"
 	"github.com/opencontainers/selinux/go-selinux"
@@ -408,7 +408,7 @@ func (ic *ContainerEngine) PlayKube(ctx context.Context, body io.Reader, options
 
 	if options.ServiceContainer && ranContainers {
 		switch len(notifyProxies) {
-		case 0: // Optimization for containers/podman/issues/17345
+		case 0: // Optimization for pycabbage/podman/issues/17345
 			// No container needs sdnotify, so we can mark the
 			// service container's conmon as the main PID and
 			// return early.
@@ -863,7 +863,7 @@ func (ic *ContainerEngine) playKubePod(ctx context.Context, podName string, podY
 			return nil, nil, err
 		}
 
-		// ensure the environment is setup for initContainers as well: https://github.com/containers/podman/issues/18384
+		// ensure the environment is setup for initContainers as well: https://github.com/pycabbage/podman/issues/18384
 		warn, err := generate.CompleteSpec(ctx, ic.Libpod, specGen)
 		if err != nil {
 			return nil, nil, err

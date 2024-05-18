@@ -14,10 +14,10 @@ import (
 	"github.com/containers/common/libimage"
 	"github.com/containers/common/pkg/config"
 	"github.com/containers/common/pkg/parse"
-	"github.com/containers/podman/v5/libpod"
-	"github.com/containers/podman/v5/libpod/define"
-	"github.com/containers/podman/v5/pkg/specgen"
-	"github.com/containers/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/libpod"
+	"github.com/pycabbage/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/pkg/specgen"
+	"github.com/pycabbage/podman/v5/pkg/util"
 	spec "github.com/opencontainers/runtime-spec/specs-go"
 	"github.com/sirupsen/logrus"
 )
@@ -41,7 +41,7 @@ func finalizeMounts(ctx context.Context, s *specgen.SpecGenerator, rt *libpod.Ru
 		baseMounts[dest] = mount
 
 		// Necessary to ensure that mounts override image volumes
-		// Ref: https://github.com/containers/podman/issues/19529
+		// Ref: https://github.com/pycabbage/podman/issues/19529
 		delete(baseVolumes, dest)
 	}
 	for dest, volume := range volFromVolumes {

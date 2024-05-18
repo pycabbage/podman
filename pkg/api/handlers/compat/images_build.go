@@ -18,14 +18,14 @@ import (
 	"github.com/containers/buildah/pkg/parse"
 	"github.com/containers/image/v5/docker/reference"
 	"github.com/containers/image/v5/types"
-	"github.com/containers/podman/v5/libpod"
-	"github.com/containers/podman/v5/pkg/api/handlers/utils"
-	api "github.com/containers/podman/v5/pkg/api/types"
-	"github.com/containers/podman/v5/pkg/auth"
-	"github.com/containers/podman/v5/pkg/bindings/images"
-	"github.com/containers/podman/v5/pkg/channel"
-	"github.com/containers/podman/v5/pkg/rootless"
-	"github.com/containers/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/libpod"
+	"github.com/pycabbage/podman/v5/pkg/api/handlers/utils"
+	api "github.com/pycabbage/podman/v5/pkg/api/types"
+	"github.com/pycabbage/podman/v5/pkg/auth"
+	"github.com/pycabbage/podman/v5/pkg/bindings/images"
+	"github.com/pycabbage/podman/v5/pkg/channel"
+	"github.com/pycabbage/podman/v5/pkg/rootless"
+	"github.com/pycabbage/podman/v5/pkg/util"
 	"github.com/containers/storage/pkg/archive"
 	"github.com/docker/docker/pkg/jsonmessage"
 	"github.com/opencontainers/runtime-spec/specs-go"
@@ -378,7 +378,7 @@ func BuildImage(w http.ResponseWriter, r *http.Request) {
 		}
 
 		// Make sure to force rootless as rootless otherwise buildah runs code which is intended to be run only as root.
-		// Same the other way around: https://github.com/containers/podman/issues/22109
+		// Same the other way around: https://github.com/pycabbage/podman/issues/22109
 		switch isolation {
 		case buildah.IsolationOCI:
 			if rootless.IsRootless() {

@@ -170,7 +170,7 @@ func getRuntimeConfig(netns, conName, conID, networkName string, ports []cniPort
 		IfName:      opts.InterfaceName,
 		Args: [][2]string{
 			{"IgnoreUnknown", "1"},
-			// Do not set the K8S env vars, see https://github.com/containers/podman/issues/12083.
+			// Do not set the K8S env vars, see https://github.com/pycabbage/podman/issues/12083.
 			// Only K8S_POD_NAME is used by dnsname to get the container name.
 			{"K8S_POD_NAME", conName},
 		},

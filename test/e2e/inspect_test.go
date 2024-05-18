@@ -1,7 +1,7 @@
 package integration
 
 import (
-	. "github.com/containers/podman/v5/test/utils"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	. "github.com/onsi/gomega/gexec"
@@ -35,7 +35,7 @@ var _ = Describe("Podman inspect", func() {
 		inspect.WaitWithDefaultTimeout()
 		Expect(inspect).Should(ExitCleanly())
 		// output should not be empty
-		// test validates fix for https://github.com/containers/podman/issues/8785
+		// test validates fix for https://github.com/pycabbage/podman/issues/8785
 		Expect(inspect.OutputToString()).To(ContainSubstring("TEST="), ".Config.Env")
 
 		session = podmanTest.Podman([]string{"rmi", "envwithtab"})
@@ -427,7 +427,7 @@ var _ = Describe("Podman inspect", func() {
 		Expect(inspect).To(ExitWithError())
 	})
 
-	// Fixes https://github.com/containers/podman/issues/8444
+	// Fixes https://github.com/pycabbage/podman/issues/8444
 	It("podman inspect --format json .NetworkSettings.Ports", func() {
 		ctnrName := "Ctnr_" + RandomString(25)
 

@@ -18,7 +18,7 @@ $ brew install go go-md2man
 You can obtain the latest source code for Podman from its github repository.
 
 ```
-$ git clone https://github.com/containers/podman go/src/github.com/containers/podman
+$ git clone https://github.com/pycabbage/podman go/src/github.com/pycabbage/podman
 ```
 
 ## Build client
@@ -26,7 +26,7 @@ After completing the preparatory steps of obtaining the Podman source code and i
 can now be built.
 
 ```
-$ cd go/src/github.com/containers/podman
+$ cd go/src/github.com/pycabbage/podman
 $ make podman-remote
 $ mv bin/darwin/podman bin/podman
 ```
@@ -66,4 +66,4 @@ $ man podman
 ## Using the client
 
 To learn how to use the Podman client, refer to its
-[tutorial](https://github.com/containers/podman/blob/main/docs/tutorials/remote_client.md).
+[tutorial](https://github.com/pycabbage/podman/blob/main/docs/tutorials/remote_client.md).

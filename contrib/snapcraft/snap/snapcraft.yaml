@@ -14,8 +14,8 @@ base: core18
 parts:
   podman:
     plugin: go
-    source: https://github.com/containers/podman/archive/v0.11.1.1.tar.gz
-    go-importpath: github.com/containers/podman
+    source: https://github.com/pycabbage/podman/archive/v0.11.1.1.tar.gz
+    go-importpath: github.com/pycabbage/podman
     build-packages:
      # https://podman.io/getting-started/installation#build-and-run-dependencies
      - btrfs-tools

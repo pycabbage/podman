@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/containers/podman/v5/pkg/api/handlers/utils"
+	"github.com/pycabbage/podman/v5/pkg/api/handlers/utils"
 )
 
 // DefaultPodmanSwaggerSpec provides the default path to the podman swagger spec file
-const DefaultPodmanSwaggerSpec = "/usr/share/containers/podman/swagger.yaml"
+const DefaultPodmanSwaggerSpec = "/usr/share/pycabbage/podman/swagger.yaml"
 
 func ServeSwagger(w http.ResponseWriter, r *http.Request) {
 	path := DefaultPodmanSwaggerSpec

@@ -13,7 +13,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/containers/podman/v5/pkg/util"
+	"github.com/pycabbage/podman/v5/pkg/util"
 	"github.com/containers/storage/pkg/lockfile"
 	"github.com/nxadm/tail"
 	"github.com/sirupsen/logrus"
@@ -33,7 +33,7 @@ func newLogFileEventer(options EventerOptions) (*EventLogFile, error) {
 		return nil, fmt.Errorf("creating events dirs: %w", err)
 	}
 	// We have to make sure the file is created otherwise reading events will hang.
-	// https://github.com/containers/podman/issues/15688
+	// https://github.com/pycabbage/podman/issues/15688
 	fd, err := os.OpenFile(options.LogFilePath, os.O_RDONLY|os.O_CREATE, 0700)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create event log file: %w", err)

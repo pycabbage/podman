@@ -9,11 +9,11 @@ import (
 	"strings"
 
 	machineconfig "github.com/containers/common/pkg/machine"
-	pkgMachine "github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/env"
-	pkgOS "github.com/containers/podman/v5/pkg/machine/os"
-	"github.com/containers/podman/v5/pkg/machine/provider"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	pkgMachine "github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
+	pkgOS "github.com/pycabbage/podman/v5/pkg/machine/os"
+	"github.com/pycabbage/podman/v5/pkg/machine/provider"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 )
 
 type ManagerOpts struct {

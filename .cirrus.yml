@@ -13,7 +13,7 @@ env:
     # Overrides default location (/tmp/cirrus) for repo clone
     GOPATH: &gopath "/var/tmp/go"
     GOCACHE: "${GOPATH}/cache"
-    GOSRC: &gosrc "/var/tmp/go/src/github.com/containers/podman"
+    GOSRC: &gosrc "/var/tmp/go/src/github.com/pycabbage/podman"
     CIRRUS_WORKING_DIR: *gosrc
     # The default is 'sh' if unspecified
     CIRRUS_SHELL: "/bin/bash"

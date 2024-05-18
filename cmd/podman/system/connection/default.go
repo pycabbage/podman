@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/containers/common/pkg/config"
-	"github.com/containers/podman/v5/cmd/podman/common"
-	"github.com/containers/podman/v5/cmd/podman/registry"
-	"github.com/containers/podman/v5/cmd/podman/system"
+	"github.com/pycabbage/podman/v5/cmd/podman/common"
+	"github.com/pycabbage/podman/v5/cmd/podman/registry"
+	"github.com/pycabbage/podman/v5/cmd/podman/system"
 	"github.com/spf13/cobra"
 )
 

@@ -43,7 +43,7 @@ func requestMachinePorts(expose bool, ports []types.PortMapping) error {
 		Transport: &http.Transport{
 			// make sure to not set a proxy here so explicitly ignore the proxy
 			// since we want to talk directly to gvproxy
-			// https://github.com/containers/podman/issues/13628
+			// https://github.com/pycabbage/podman/issues/13628
 			Proxy:                 nil,
 			MaxIdleConns:          50,
 			IdleConnTimeout:       30 * time.Second,

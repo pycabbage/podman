@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	. "github.com/containers/podman/v5/test/utils"
+	. "github.com/pycabbage/podman/v5/test/utils"
 	"github.com/containers/storage"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -74,7 +74,7 @@ var _ = Describe("Podman UserNS support", func() {
 
 	// It essentially repeats the test above but with the `-it` short option
 	// that broke execution at:
-	//     https://github.com/containers/podman/pull/1066#issuecomment-403562116
+	//     https://github.com/pycabbage/podman/pull/1066#issuecomment-403562116
 	// To avoid a potential future regression, use this as a test.
 	It("podman uidmapping and gidmapping with short-opts", func() {
 		session := podmanTest.Podman([]string{"run", "--uidmap=0:1:5000", "--gidmap=0:200:5000", "alpine", "echo", "hello"})

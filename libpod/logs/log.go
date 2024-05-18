@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/containers/podman/v5/libpod/logs/reversereader"
+	"github.com/pycabbage/podman/v5/libpod/logs/reversereader"
 	"github.com/nxadm/tail"
 	"github.com/sirupsen/logrus"
 )
@@ -130,7 +130,7 @@ func getTailLog(path string, tail int) ([]*LogLine, error) {
 			}
 			// We explicitly need to check for more lines than tail because we have
 			// to read to next full line and must keep all partial lines
-			// https://github.com/containers/podman/issues/19545
+			// https://github.com/pycabbage/podman/issues/19545
 			if nllCounter > tail {
 				// because we add lines in the inverse order we must invert the slice in the end
 				return reverseLog(tailLog), nil

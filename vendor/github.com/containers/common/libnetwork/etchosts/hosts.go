@@ -114,7 +114,7 @@ func newHost(params *Params) error {
 	containerIPs := make(HostEntries, 0, len(params.ContainerIPs)+3)
 
 	// if localhost was not added we add it
-	// https://github.com/containers/podman/issues/11411
+	// https://github.com/pycabbage/podman/issues/11411
 	lh := []string{localhost}
 	l1 := HostEntry{IP: "127.0.0.1", Names: lh}
 	l2 := HostEntry{IP: "::1", Names: lh}
@@ -269,7 +269,7 @@ func parseHostsFile(file string) (HostEntries, error) {
 	f, err := os.Open(file)
 	if err != nil {
 		// do not error when the default hosts file does not exists
-		// https://github.com/containers/podman/issues/12667
+		// https://github.com/pycabbage/podman/issues/12667
 		if errors.Is(err, os.ErrNotExist) && file == config.DefaultHostsFile {
 			return nil, nil
 		}

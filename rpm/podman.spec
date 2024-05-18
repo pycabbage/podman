@@ -53,7 +53,7 @@ Epoch: 5
 %endif
 # DO NOT TOUCH the Version string!
 # The TRUE source of this specfile is:
-# https://github.com/containers/podman/blob/main/rpm/podman.spec
+# https://github.com/pycabbage/podman/blob/main/rpm/podman.spec
 # If that's what you're reading, Version must be 0, and will be updated by Packit for
 # copr and koji builds.
 # If you're reading this on dist-git, the version is automatically filled in by Packit.

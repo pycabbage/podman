@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/containers/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	. "github.com/onsi/gomega/gexec"
@@ -115,7 +115,7 @@ var _ = Describe("run basic podman commands", func() {
 		Expect(runAlp).To(Exit(0))
 		testHTTPServer("62544", false, "podman rulez")
 
-		// Test exec in machine scenario: https://github.com/containers/podman/issues/20821
+		// Test exec in machine scenario: https://github.com/pycabbage/podman/issues/20821
 		exec, err := mb.setCmd(bm.withPodmanCommand([]string{"exec", ctrName, "true"})).run()
 		Expect(err).ToNot(HaveOccurred())
 		Expect(exec).To(Exit(0))

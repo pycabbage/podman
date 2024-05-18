@@ -17,13 +17,13 @@ import (
 	"github.com/containers/common/pkg/config"
 	"github.com/containers/common/pkg/strongunits"
 	gvproxy "github.com/containers/gvisor-tap-vsock/pkg/types"
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/ignition"
-	"github.com/containers/podman/v5/pkg/machine/qemu/command"
-	"github.com/containers/podman/v5/pkg/machine/shim/diskpull"
-	"github.com/containers/podman/v5/pkg/machine/sockets"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/ignition"
+	"github.com/pycabbage/podman/v5/pkg/machine/qemu/command"
+	"github.com/pycabbage/podman/v5/pkg/machine/shim/diskpull"
+	"github.com/pycabbage/podman/v5/pkg/machine/sockets"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 	"github.com/sirupsen/logrus"
 )
 
@@ -123,7 +123,7 @@ func runStartVMCommand(cmd *exec.Cmd) error {
 	err := cmd.Start()
 	if err != nil {
 		// check if qemu was not found
-		// look up qemu again maybe the path was changed, https://github.com/containers/podman/issues/13394
+		// look up qemu again maybe the path was changed, https://github.com/pycabbage/podman/issues/13394
 		cfg, err := config.Default()
 		if err != nil {
 			return err

@@ -3,7 +3,7 @@ package vmconfigs
 import (
 	"os"
 
-	"github.com/containers/podman/v5/pkg/machine/applehv/vfkit"
+	"github.com/pycabbage/podman/v5/pkg/machine/applehv/vfkit"
 )
 
 type AppleHVConfig struct {

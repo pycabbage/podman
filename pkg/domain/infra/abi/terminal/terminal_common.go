@@ -9,8 +9,8 @@ import (
 	"os"
 
 	"github.com/containers/common/pkg/resize"
-	"github.com/containers/podman/v5/libpod"
-	"github.com/containers/podman/v5/libpod/define"
+	"github.com/pycabbage/podman/v5/libpod"
+	"github.com/pycabbage/podman/v5/libpod/define"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/term"
 )

@@ -2,7 +2,7 @@ package entities
 
 import (
 	"github.com/containers/image/v5/types"
-	entitiesTypes "github.com/containers/podman/v5/pkg/domain/entities/types"
+	entitiesTypes "github.com/pycabbage/podman/v5/pkg/domain/entities/types"
 )
 
 // ManifestCreateOptions provides model for creating manifest list or image index

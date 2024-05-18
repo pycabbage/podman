@@ -1654,7 +1654,7 @@ func (s *StageExecutor) Execute(ctx context.Context, base string) (imgID string,
 			// base image.
 			// Enforce pull "never" since we already have an image
 			// ID that we really should not be pulling anymore (see
-			// containers/podman/issues/10307).
+			// pycabbage/podman/issues/10307).
 			if _, err := s.prepare(ctx, imgID, false, true, true, define.PullNever); err != nil {
 				return "", nil, false, fmt.Errorf("preparing container for next step: %w", err)
 			}

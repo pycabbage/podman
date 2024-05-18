@@ -214,7 +214,7 @@ t POST "libpod/build?dockerfile=containerfile" $CONTAINERFILE_TAR 200 \
   .stream~"STEP 1/1: FROM $IMAGE"
 
 # Newer Docker client sets empty cacheFrom for every build command even if it is not used,
-# following commit makes sure we test such use-case. See https://github.com/containers/podman/pull/16380
+# following commit makes sure we test such use-case. See https://github.com/pycabbage/podman/pull/16380
 #TODO: This test should be extended when buildah's cache-from and cache-to functionally supports
 # multiple remote-repos
 t POST "libpod/build?dockerfile=containerfile&cachefrom=[]" $CONTAINERFILE_TAR 200 \

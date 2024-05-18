@@ -506,7 +506,7 @@ msg "************************************************************"
 if [[ "$PRIV_NAME" == "rootless" ]] && [[ "$UID" -eq 0 ]]; then
     # Remove /var/lib/cni, it is not required for rootless cni.
     # We have to test that it works without this directory.
-    # https://github.com/containers/podman/issues/10857
+    # https://github.com/pycabbage/podman/issues/10857
     rm -rf /var/lib/cni
 
     # This must be done at the last second, otherwise `make` calls

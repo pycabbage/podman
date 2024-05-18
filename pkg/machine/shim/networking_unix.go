@@ -8,9 +8,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 	"github.com/sirupsen/logrus"
 )
 
@@ -69,7 +69,7 @@ func setupForwardingLinks(hostSocket, dataDir *define.VMFile) (string, machine.A
 	}
 
 	// Setup the user global socket if not in use
-	// (e.g ~/.local/share/containers/podman/machine/podman.sock)
+	// (e.g ~/.local/share/pycabbage/podman/machine/podman.sock)
 	if !alreadyLinked(hostSocket.GetPath(), userGlobalSocket.GetPath()) {
 		if checkSockInUse(userGlobalSocket.GetPath()) {
 			return hostSocket.GetPath(), machine.MachineLocal, nil

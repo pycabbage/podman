@@ -84,7 +84,7 @@ function teardown() {
     systemctl stop $SERVICE_NAME
 }
 
-# Regression test for https://github.com/containers/podman/issues/17749
+# Regression test for https://github.com/pycabbage/podman/issues/17749
 @test "podman-system-service --log-level=trace should be able to hijack" {
     skip_if_remote "podman system service unavailable over remote"
 

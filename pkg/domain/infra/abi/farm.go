@@ -9,8 +9,8 @@ import (
 
 	"github.com/containers/buildah/pkg/parse"
 	lplatform "github.com/containers/common/libimage/platform"
-	"github.com/containers/podman/v5/pkg/domain/entities"
-	"github.com/containers/podman/v5/pkg/emulation"
+	"github.com/pycabbage/podman/v5/pkg/domain/entities"
+	"github.com/pycabbage/podman/v5/pkg/emulation"
 )
 
 // FarmNodeName returns the local engine's name.

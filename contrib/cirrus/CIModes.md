@@ -11,7 +11,7 @@ staring at the YAML.
 for producing a graph (flow-chart) of the `.cirrus.yml` file.  A (possibly
 outdated) example of it's output can be seen below:
 
-![cirrus-task-map output](https://github.com/containers/podman/wiki/cirrus-map.svg)
+![cirrus-task-map output](https://github.com/pycabbage/podman/wiki/cirrus-map.svg)
 
 ## Implementation notes
 

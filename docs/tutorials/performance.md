@@ -76,7 +76,7 @@ when these conditions are all met:
 
 Runtime speed is not affected. Only __podman create__ and the container creation phases of
 __podman run__ and __podman build__ are affected.
-For more details, see [GitHub comment](https://github.com/containers/podman/issues/16541#issuecomment-1352790422).
+For more details, see [GitHub comment](https://github.com/pycabbage/podman/issues/16541#issuecomment-1352790422).
 Command-line options that modify the UID/GID mapping are for example __--userns__, __--uidmap__ and __--gidmap__.
 The command-line option `--userns auto` is particularly affected by this performance penalty,
 because different UID/GID mappings could potentially be used on each invocation. For other uses of
@@ -145,7 +145,7 @@ See storage.conf(5) for all available configuration settings.
 ### Network performance for rootless Podman
 
 When using rootless Podman, network traffic is normally passed through
-[slirp4netns](https://github.com/containers/podman/blob/main/docs/tutorials/basic_networking.md#slirp4netns).
+[slirp4netns](https://github.com/pycabbage/podman/blob/main/docs/tutorials/basic_networking.md#slirp4netns).
 This comes with a performance penalty.
 
 You can avoid using slirp4netns in the following ways:
@@ -157,7 +157,7 @@ You can avoid using slirp4netns in the following ways:
     Using a service on demand, can free up compute resources.
   + Start the service explicitly (`systemctl --user enable foobar.service`). If the service is already
     running when the first client connects, there will be no delay due to container startup.
-  The [socket activation tutorial](https://github.com/containers/podman/blob/main/docs/tutorials/socket_activation.md)
+  The [socket activation tutorial](https://github.com/pycabbage/podman/blob/main/docs/tutorials/socket_activation.md)
   provides more information about socket activation support in Podman.
 
 * Use the network driver [_pasta_](https://passt.top/passt/about/#pasta). Pasta is under development and currently needs a patched Podman to run.

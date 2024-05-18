@@ -3,7 +3,7 @@
 # New home
 
 The contents of the hello image have been moved to a dedicated repository:
-https://github.com/containers/PodmanHello
+https://github.com/pycabbage/podmanHello
 
 # Warning
 

@@ -1144,7 +1144,7 @@
     Send logrus messages back to caller when building
     github: Fix bad repo. ref in workflow config
     Check earlier for bad image tags name
-    buildah bud: fix containers/podman/issues/10307
+    buildah bud: fix pycabbage/podman/issues/10307
     Bump github.com/containers/storage from 1.30.1 to 1.30.3
     Cirrus: Support [CI:DOCS] test skipping
     Notification email for cirrus-cron build failures
@@ -1468,7 +1468,7 @@
     CI: require that conformance tests pass
     bump(github.com/openshift/imagebuilder) to v1.1.8
     Skip tlsVerify insecure BUILD_REGISTRY_SOURCES
-    Fix build path wrong https://github.com/containers/podman/issues/7993
+    Fix build path wrong https://github.com/pycabbage/podman/issues/7993
     refactor pullpolicy to avoid deps
     build(deps): bump github.com/containers/common from 0.24.0 to 0.25.0
     CI: run gating tasks with a lot more memory
@@ -1613,7 +1613,7 @@
     imagebuildah: return the right stage's image as the "final" image
     Fix a help string
     Deduplicate environment variables
-    switch containers/libpod to containers/podman
+    switch containers/libpod to pycabbage/podman
     Bump github.com/containers/ocicrypt from 1.0.2 to 1.0.3
     Bump github.com/opencontainers/selinux from 1.5.2 to 1.6.0
     Mask out /sys/dev to prevent information leak

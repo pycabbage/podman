@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/containers/podman/v5/pkg/machine/connection"
+	"github.com/pycabbage/podman/v5/pkg/machine/connection"
 	"github.com/containers/storage/pkg/ioutils"
 )
 

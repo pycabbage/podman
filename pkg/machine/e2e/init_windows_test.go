@@ -7,8 +7,8 @@ import (
 
 	"github.com/Microsoft/go-winio/vhd"
 	"github.com/containers/libhvee/pkg/hypervctl"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/wsl/wutil"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/wsl/wutil"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	. "github.com/onsi/gomega/gexec"

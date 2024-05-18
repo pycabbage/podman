@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/env"
-	"github.com/containers/podman/v5/pkg/machine/provider"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
+	"github.com/pycabbage/podman/v5/pkg/machine/provider"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
 )
 
 func getMachineConn(connectionURI string, parsedConnection *url.URL) (string, error) {

@@ -10,15 +10,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/containers/podman/v5/pkg/machine"
-	"github.com/containers/podman/v5/pkg/machine/connection"
-	machineDefine "github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/env"
-	"github.com/containers/podman/v5/pkg/machine/ignition"
-	"github.com/containers/podman/v5/pkg/machine/lock"
-	"github.com/containers/podman/v5/pkg/machine/proxyenv"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
-	"github.com/containers/podman/v5/utils"
+	"github.com/pycabbage/podman/v5/pkg/machine"
+	"github.com/pycabbage/podman/v5/pkg/machine/connection"
+	machineDefine "github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/env"
+	"github.com/pycabbage/podman/v5/pkg/machine/ignition"
+	"github.com/pycabbage/podman/v5/pkg/machine/lock"
+	"github.com/pycabbage/podman/v5/pkg/machine/proxyenv"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/utils"
 	"github.com/hashicorp/go-multierror"
 	"github.com/sirupsen/logrus"
 )
@@ -664,9 +664,9 @@ func Reset(dirs *machineDefine.MachineDirs, mp vmconfigs.VMProvider, mcs map[str
 	// Note: we cannot delete the machine run dir blindly like this because
 	// other things live there like the podman.socket and so forth.
 
-	// in linux this ~/.local/share/containers/podman/machine
+	// in linux this ~/.local/share/pycabbage/podman/machine
 	dataDirErr := utils.GuardedRemoveAll(filepath.Dir(dirs.DataDir.GetPath()))
-	// in linux this ~/.config/containers/podman/machine
+	// in linux this ~/.config/pycabbage/podman/machine
 	confDirErr := utils.GuardedRemoveAll(filepath.Dir(dirs.ConfigDir.GetPath()))
 	resetErrors = multierror.Append(resetErrors, confDirErr, dataDirErr)
 	return resetErrors.ErrorOrNil()

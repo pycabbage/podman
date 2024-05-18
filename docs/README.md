@@ -53,7 +53,7 @@ the following:
 
 If reloading the page, or clearing your local cache does not fix the problem, it is
 likely caused by broken metadata needed to protect clients from cross-site-scripting
-style attacks.  Please [notify a maintainer](https://github.com/containers/podman#communications)
+style attacks.  Please [notify a maintainer](https://github.com/pycabbage/podman#communications)
 so they may investigate how/why the `swagger.yaml` file's CORS-metadata is
 incorrect, or the file isn't accessible for some other reason.
 

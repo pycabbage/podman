@@ -221,7 +221,7 @@ outer:
 
 	logrus.Info("Ready")
 
-	// https://github.com/containers/podman/issues/11248
+	// https://github.com/pycabbage/podman/issues/11248
 	// Copy /dev/null to stdout and stderr to prevent SIGPIPE errors
 	if f, err := os.OpenFile(os.DevNull, os.O_WRONLY, 0755); err == nil {
 		unix.Dup2(int(f.Fd()), 1) //nolint:errcheck

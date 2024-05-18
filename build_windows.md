@@ -50,10 +50,10 @@ One needs to restart the [msys2](https://www.msys2.org/) shell after dependency 
 
 ## Obtain Podman source code
 
-One can obtain the latest source code for Podman from its [GitHub](https://github.com/containers/podman) repository.
+One can obtain the latest source code for Podman from its [GitHub](https://github.com/pycabbage/podman) repository.
 
 ```
-$ git clone https://github.com/containers/podman.git go/src/github.com/containers/podman
+$ git clone https://github.com/pycabbage/podman.git go/src/github.com/pycabbage/podman
 ```
 
 ## Build client
@@ -62,7 +62,7 @@ After completing the preparatory steps of obtaining the Podman source code and i
 can now be built.
 
 ```
-$ cd go/src/github.com/containers/podman
+$ cd go/src/github.com/pycabbage/podman
 $ make clean podman-remote-release-windows_amd64.zip
 ```
 
@@ -104,4 +104,4 @@ like `podman-4.5.0-dev-setup.exe`. This could be installed in a similar manner a
 ## Using the client
 
 To learn how to use the Podman client, refer to its
-[tutorial](https://github.com/containers/podman/blob/main/docs/tutorials/remote_client.md).
+[tutorial](https://github.com/pycabbage/podman/blob/main/docs/tutorials/remote_client.md).

@@ -8,11 +8,11 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/containers/podman/v5/pkg/machine/compression"
-	"github.com/containers/podman/v5/pkg/machine/define"
-	"github.com/containers/podman/v5/pkg/machine/provider"
-	"github.com/containers/podman/v5/pkg/machine/vmconfigs"
-	"github.com/containers/podman/v5/utils"
+	"github.com/pycabbage/podman/v5/pkg/machine/compression"
+	"github.com/pycabbage/podman/v5/pkg/machine/define"
+	"github.com/pycabbage/podman/v5/pkg/machine/provider"
+	"github.com/pycabbage/podman/v5/pkg/machine/vmconfigs"
+	"github.com/pycabbage/podman/v5/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

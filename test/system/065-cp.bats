@@ -1025,7 +1025,7 @@ load helpers
     run_podman rm -t 0 -f ctr-file ctr-dir
 }
 
-# https://github.com/containers/podman/pull/16498
+# https://github.com/pycabbage/podman/pull/16498
 @test "podman cp - dot notation - host to container" {
     srcdir=$PODMAN_TMPDIR/src
     mkdir -p $srcdir
